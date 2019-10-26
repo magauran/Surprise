@@ -9,5 +9,5 @@
 import Foundation
 
 final class AccountInteractor {
-    
+    var presenter: AccountPresenter!
 }

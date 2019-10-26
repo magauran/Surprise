@@ -9,6 +9,8 @@
 import UIKit
 
 final class AccountViewController: UIViewController {
+    var interactor: AccountInteractor!
+
     let menuSections = [
         MenuSection(items: [
             MenuItem(title: "About us"),

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17E7967E55527EF367A9022E /* Pods_Surprise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006A5A359DCA4FE63AFB630E /* Pods_Surprise.framework */; };
 		22730F8CD929089C6D222F95 /* Pods_SurpriseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6821CC4B7F738AAFBA4E4FE1 /* Pods_SurpriseUITests.framework */; };
+		8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC323644AAD0013A254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AC223644AAD0013A254 /* ViewController.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		88A60AF4236474CB0013A254 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF3236474CB0013A254 /* AccountViewController.swift */; };
 		88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF5236478530013A254 /* AccountInteractor.swift */; };
 		88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF9236478880013A254 /* AccountPresenter.swift */; };
+		88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AFB23647C500013A254 /* AppAssembler.swift */; };
 		CB8BCE807F0CA91A04B3AFD1 /* Pods_SurpriseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07004C838422C47B12E17340 /* Pods_SurpriseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,7 @@
 		471018A9FA95ABBF16D82203 /* Pods-Surprise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surprise.debug.xcconfig"; path = "Target Support Files/Pods-Surprise/Pods-Surprise.debug.xcconfig"; sourceTree = "<group>"; };
 		5F56F97B04B0F769484B0679 /* Pods-SurpriseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurpriseUITests.debug.xcconfig"; path = "Target Support Files/Pods-SurpriseUITests/Pods-SurpriseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6821CC4B7F738AAFBA4E4FE1 /* Pods_SurpriseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurpriseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard++.swift"; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC223644AAD0013A254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		88A60AF3236474CB0013A254 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		88A60AF5236478530013A254 /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
 		88A60AF9236478880013A254 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		88A60AFB23647C500013A254 /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
 		D020D10873280F0D6F8DA671 /* Pods-SurpriseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurpriseTests.release.xcconfig"; path = "Target Support Files/Pods-SurpriseTests/Pods-SurpriseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				88A60ABE23644AAD0013A254 /* AppDelegate.swift */,
+				88A60AFB23647C500013A254 /* AppAssembler.swift */,
+				8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */,
 				88A60AC223644AAD0013A254 /* ViewController.swift */,
 				88A60AF123646F650013A254 /* TabBarController.swift */,
 				88A60AF7236478620013A254 /* Modules */,
@@ -205,6 +211,7 @@
 				88A60AB723644AAD0013A254 /* Sources */,
 				88A60AB823644AAD0013A254 /* Frameworks */,
 				88A60AB923644AAD0013A254 /* Resources */,
+				EC1B0A53C6D777B44C5FAB86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,6 +415,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EC1B0A53C6D777B44C5FAB86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Surprise/Pods-Surprise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectAutoregistration.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Surprise/Pods-Surprise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -419,7 +450,9 @@
 				88A60AC323644AAD0013A254 /* ViewController.swift in Sources */,
 				88A60AF4236474CB0013A254 /* AccountViewController.swift in Sources */,
 				88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */,
+				8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */,
 				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,
+				88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */,
 				88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

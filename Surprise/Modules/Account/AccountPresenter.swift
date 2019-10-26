@@ -9,5 +9,5 @@
 import Foundation
 
 final class AccountPresenter {
-    
+    weak var viewController: AccountViewController?
 }
