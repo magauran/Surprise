@@ -13,6 +13,7 @@
 		8811A7002364AFFB0069E9A9 /* AccountViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A6FF2364AFFB0069E9A9 /* AccountViewModels.swift */; };
 		8811A7022364D2A70069E9A9 /* AccountBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A7012364D2A70069E9A9 /* AccountBottomView.swift */; };
 		8811A7042364E5990069E9A9 /* UITableView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A7032364E5990069E9A9 /* UITableView++.swift */; };
+		8811A7072364F4A00069E9A9 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A7062364F4A00069E9A9 /* UIImage++.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC323644AAD0013A254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AC223644AAD0013A254 /* ViewController.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		8811A6FF2364AFFB0069E9A9 /* AccountViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModels.swift; sourceTree = "<group>"; };
 		8811A7012364D2A70069E9A9 /* AccountBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBottomView.swift; sourceTree = "<group>"; };
 		8811A7032364E5990069E9A9 /* UITableView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView++.swift"; sourceTree = "<group>"; };
+		8811A7062364F4A00069E9A9 /* UIImage++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage++.swift"; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC223644AAD0013A254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8811A7052364F48D0069E9A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8811A7032364E5990069E9A9 /* UITableView++.swift */,
+				8811A7062364F4A00069E9A9 /* UIImage++.swift */,
+				8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		88A60AB223644AAD0013A254 = {
 			isa = PBXGroup;
 			children = (
@@ -144,8 +156,7 @@
 			children = (
 				88A60ABE23644AAD0013A254 /* AppDelegate.swift */,
 				88A60AFB23647C500013A254 /* AppAssembler.swift */,
-				8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */,
-				8811A7032364E5990069E9A9 /* UITableView++.swift */,
+				8811A7052364F48D0069E9A9 /* Extensions */,
 				88A60AC223644AAD0013A254 /* ViewController.swift */,
 				88A60AF123646F650013A254 /* TabBarController.swift */,
 				88A60AF7236478620013A254 /* Modules */,
@@ -456,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88A60AF223646F650013A254 /* TabBarController.swift in Sources */,
+				8811A7072364F4A00069E9A9 /* UIImage++.swift in Sources */,
 				8811A7042364E5990069E9A9 /* UITableView++.swift in Sources */,
 				88A60AC323644AAD0013A254 /* ViewController.swift in Sources */,
 				88A60AF4236474CB0013A254 /* AccountViewController.swift in Sources */,
