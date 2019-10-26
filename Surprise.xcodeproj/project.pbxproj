@@ -16,6 +16,10 @@
 		88A60AD623644AAE0013A254 /* SurpriseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AD523644AAE0013A254 /* SurpriseTests.swift */; };
 		88A60AE123644AAE0013A254 /* SurpriseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AE023644AAE0013A254 /* SurpriseUITests.swift */; };
 		88A60AF0236467EE0013A254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AEF236467EE0013A254 /* Main.storyboard */; };
+		88A60AF223646F650013A254 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF123646F650013A254 /* TabBarController.swift */; };
+		88A60AF4236474CB0013A254 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF3236474CB0013A254 /* AccountViewController.swift */; };
+		88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF5236478530013A254 /* AccountInteractor.swift */; };
+		88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF9236478880013A254 /* AccountPresenter.swift */; };
 		CB8BCE807F0CA91A04B3AFD1 /* Pods_SurpriseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07004C838422C47B12E17340 /* Pods_SurpriseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,10 @@
 		88A60AE023644AAE0013A254 /* SurpriseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurpriseUITests.swift; sourceTree = "<group>"; };
 		88A60AE223644AAE0013A254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88A60AEF236467EE0013A254 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88A60AF123646F650013A254 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		88A60AF3236474CB0013A254 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		88A60AF5236478530013A254 /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
+		88A60AF9236478880013A254 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		D020D10873280F0D6F8DA671 /* Pods-SurpriseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurpriseTests.release.xcconfig"; path = "Target Support Files/Pods-SurpriseTests/Pods-SurpriseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +134,8 @@
 			children = (
 				88A60ABE23644AAD0013A254 /* AppDelegate.swift */,
 				88A60AC223644AAD0013A254 /* ViewController.swift */,
+				88A60AF123646F650013A254 /* TabBarController.swift */,
+				88A60AF7236478620013A254 /* Modules */,
 				88A60AC723644AAE0013A254 /* Assets.xcassets */,
 				88A60AEF236467EE0013A254 /* Main.storyboard */,
 				88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */,
@@ -150,6 +160,24 @@
 				88A60AE223644AAE0013A254 /* Info.plist */,
 			);
 			path = SurpriseUITests;
+			sourceTree = "<group>";
+		};
+		88A60AF7236478620013A254 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				88A60AF8236478670013A254 /* Account */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		88A60AF8236478670013A254 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				88A60AF3236474CB0013A254 /* AccountViewController.swift */,
+				88A60AF5236478530013A254 /* AccountInteractor.swift */,
+				88A60AF9236478880013A254 /* AccountPresenter.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		9930053AFEA235DC4ADE1820 /* Pods */ = {
@@ -387,7 +415,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A60AF223646F650013A254 /* TabBarController.swift in Sources */,
 				88A60AC323644AAD0013A254 /* ViewController.swift in Sources */,
+				88A60AF4236474CB0013A254 /* AccountViewController.swift in Sources */,
+				88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */,
+				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,
 				88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
