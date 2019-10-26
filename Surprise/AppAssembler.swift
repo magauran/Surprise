@@ -9,8 +9,13 @@
 import Swinject
 import SwinjectAutoregistration
 
-enum AppAssembler {
-    static let assembler = Assembler([AppAssembly(), AccountAssembly()])
+struct AppAssembler {
+    var resolver: Resolver { self.assembler.resolver }
+    let assembler: Assembler
+
+    init(parent: Assembler?) {
+        self.assembler = Assembler([AppAssembly(), AccountAssembly()], parent: parent)
+    }
 }
 
 private struct AppAssembly: Assembly {
@@ -32,6 +37,12 @@ private struct AppAssembly: Assembly {
         }
 
         container.autoregister(AppRouter.self, initializer: AppRouter.init)
+        container.autoregister(AppAssembler.self) {
+            guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+                fatalError("Could not cast delegate to type AppDelegate.")
+            }
+            return delegate.assembler
+        }
     }
 }
 
@@ -49,10 +60,20 @@ private struct AccountAssembly: Assembly {
             return interactor
         }
 
+        container.register(AboutAssembler.self) {
+            let appAssembler = $0 ~> AppAssembler.self
+            return AboutAssembler(parent: appAssembler.assembler)
+        }
+
         container.register(AccountRoutingLogic.self) {
             let viewController = $0 ~> AccountViewController.self
             let appRouter = $0 ~> AppRouter.self
-            return AccountRouter(transitionHandler: viewController, appRouter: appRouter)
+            let aboutAssembler = $0 ~> AboutAssembler.self
+            return AccountRouter(
+                transitionHandler: viewController,
+                appRouter: appRouter,
+                aboutAssembler: aboutAssembler.assembler
+            )
         }
 
         container.register(AccountPresentationLogic.self) {

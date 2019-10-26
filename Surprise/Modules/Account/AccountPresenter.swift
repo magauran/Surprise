@@ -31,7 +31,7 @@ extension AccountPresenter: AccountPresentationLogic {
     }
 
     func showAboutScreen() {
-
+        self.router?.showAboutScreen()
     }
 
     func showSettingsScreen() {
