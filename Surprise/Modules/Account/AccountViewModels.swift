@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import class UIKit.UIImage
 
 typealias MenuViewModel = [MenuSectionViewModel]
 
@@ -16,4 +17,5 @@ struct MenuSectionViewModel {
 
 struct MenuItemViewModel {
     let title: String
+    let image: UIImage?
 }

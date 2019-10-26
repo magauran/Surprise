@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import class UIKit.UIImage
 
 protocol AccountPresentationLogic {
     func presentMenu(_ menuItems: [[MenuItem]])
@@ -27,23 +28,29 @@ extension AccountPresenter: AccountPresentationLogic {
     // MARK: - ViewModelBuilder
     static func makeMenuItemViewModel(menuItem: MenuItem) -> MenuItemViewModel {
         let title: String
-//        let imageName: String
+        let image: UIImage?
 
         switch menuItem {
         case .about:
             title = "About us"
+            image = UIImage(named: "gift")
         case .settings:
             title = "Settings"
+            image = UIImage(named: "settings")
         case .rate:
             title = "Rate us"
+            image = UIImage(named: "star")
         case .help:
             title = "Help"
+            image = UIImage(named: "question")
         case .partners:
             title = "Our partners"
+            image = UIImage(named: "disclosure")
         case .legal:
             title = "Legal"
+            image = UIImage(named: "disclosure")
         }
 
-        return MenuItemViewModel(title: title)
+        return MenuItemViewModel(title: title, image: image)
     }
 }

@@ -53,6 +53,13 @@ extension AccountViewController: UITableViewDataSource {
 
         let cell = UITableViewCell()
         cell.textLabel?.text = menuItem.title
+        if let image = menuItem.image {
+            let accessoryView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 20, height: 20)))
+            accessoryView.image = image
+            cell.accessoryView = accessoryView
+        }
+        cell.tintColor = .black
+
         return cell
     }
 }
