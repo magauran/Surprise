@@ -15,12 +15,21 @@ protocol AccountDispayLogic: UIViewController {
 final class AccountViewController: UIViewController {
     var interactor: AccountBusinessLogic!
 
+    @IBOutlet private var headerView: UIView!
     @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var footerView: AccountBottomView!
+
     private var menuSections: MenuViewModel = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupTableView()
         self.interactor.fetchMenuItems()
+    }
+
+    private func setupTableView() {
+        self.tableView.setAndLayoutTableHeaderView(header: self.headerView)
+        self.tableView.setAndLayoutTableFooterView(footer: self.footerView)
     }
 }
 
@@ -66,5 +75,4 @@ extension AccountViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension AccountViewController: UITableViewDelegate {
-
 }
