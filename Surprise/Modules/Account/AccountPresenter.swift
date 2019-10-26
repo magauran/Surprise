@@ -11,12 +11,17 @@ import class UIKit.UIImage
 
 protocol AccountPresentationLogic {
     func presentMenu(_ menuItems: [[MenuItem]])
+    func showAboutScreen()
+    func showSettingsScreen()
+    func open(url: URL?)
 }
 
 final class AccountPresenter {
     weak var viewController: AccountDispayLogic?
+    var router: AccountRoutingLogic?
 }
 
+// MARK: - AccountPresentationLogic
 extension AccountPresenter: AccountPresentationLogic {
     func presentMenu(_ menuItems: [[MenuItem]]) {
         let menuSections = menuItems.map { items in
@@ -25,7 +30,21 @@ extension AccountPresenter: AccountPresentationLogic {
         self.viewController?.displayMenu(viewModel: menuSections)
     }
 
-    // MARK: - ViewModelBuilder
+    func showAboutScreen() {
+
+    }
+
+    func showSettingsScreen() {
+
+    }
+
+    func open(url: URL?) {
+        self.router?.open(url: url)
+    }
+}
+
+// MARK: - ViewModeBuilder
+extension AccountPresenter {
     static func makeMenuItemViewModel(menuItem: MenuItem) -> MenuItemViewModel {
         let title: String
         let image: UIImage?
@@ -51,6 +70,6 @@ extension AccountPresenter: AccountPresentationLogic {
             image = UIImage(named: "disclosure")
         }
 
-        return MenuItemViewModel(title: title, image: image)
+        return MenuItemViewModel(item: menuItem, title: title, image: image)
     }
 }

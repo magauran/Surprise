@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImage {
-    class func imageWith(color : UIColor) -> UIImage? {
+    class func imageWith(color: UIColor) -> UIImage? {
         defer {
             UIGraphicsEndImageContext()
         }

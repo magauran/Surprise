@@ -16,6 +16,7 @@ struct MenuSectionViewModel {
 }
 
 struct MenuItemViewModel {
+    let item: MenuItem
     let title: String
     let image: UIImage?
 }

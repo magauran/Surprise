@@ -75,4 +75,13 @@ extension AccountViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension AccountViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard self.menuSections.indices.contains(indexPath.section) else { return }
+        let menuSection = self.menuSections[indexPath.section]
+        let menuItems = menuSection.items
+        guard menuItems.indices.contains(indexPath.row) else { return }
+        let menuItem = menuItems[indexPath.row].item
+
+        self.interactor.openMenuItem(menuItem)
+    }
 }

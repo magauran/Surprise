@@ -15,6 +15,7 @@ extension UIStoryboard {
 extension UIStoryboard {
     func instantiate<ViewController: UIViewController>() -> ViewController {
         let identifier = String(describing: ViewController.self)
+        // swiftlint:disable:next force_cast
         return instantiateViewController(withIdentifier: identifier) as! ViewController
     }
 }

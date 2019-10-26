@@ -30,6 +30,8 @@ private struct AppAssembly: Assembly {
             tabBarController.selectedIndex = 2
             return tabBarController
         }
+
+        container.autoregister(AppRouter.self, initializer: AppRouter.init)
     }
 }
 
@@ -47,9 +49,16 @@ private struct AccountAssembly: Assembly {
             return interactor
         }
 
+        container.register(AccountRoutingLogic.self) {
+            let viewController = $0 ~> AccountViewController.self
+            let appRouter = $0 ~> AppRouter.self
+            return AccountRouter(transitionHandler: viewController, appRouter: appRouter)
+        }
+
         container.register(AccountPresentationLogic.self) {
             let presenter = AccountPresenter()
             presenter.viewController = $0 ~> AccountViewController.self
+            presenter.router = $0 ~> AccountRoutingLogic.self
             return presenter
         }
     }
