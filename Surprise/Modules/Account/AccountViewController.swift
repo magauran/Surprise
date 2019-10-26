@@ -8,34 +8,28 @@
 
 import UIKit
 
-final class AccountViewController: UIViewController {
-    var interactor: AccountInteractor!
+protocol AccountDispayLogic: UIViewController {
+    func displayMenu(viewModel: MenuViewModel)
+}
 
-    let menuSections = [
-        MenuSection(items: [
-            MenuItem(title: "About us"),
-            MenuItem(title: "Settings"),
-            MenuItem(title: "Rate us"),
-            MenuItem(title: "Help"),
-        ]),
-        MenuSection(items: [
-            MenuItem(title: "Our partners"),
-            MenuItem(title: "Legal"),
-        ]),
-    ]
+final class AccountViewController: UIViewController {
+    var interactor: AccountBusinessLogic!
+
+    @IBOutlet private var tableView: UITableView!
+    private var menuSections: MenuViewModel = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.interactor.fetchMenuItems()
     }
 }
 
-struct MenuSection {
-    let items: [MenuItem]
-}
-
-struct MenuItem {
-    let title: String
+// MARK: - AccountDisplayLogic
+extension AccountViewController: AccountDispayLogic {
+    func displayMenu(viewModel: MenuViewModel) {
+        self.menuSections = viewModel
+        self.tableView.reloadData()
+    }
 }
 
 // MARK: - UITableViweDataSource

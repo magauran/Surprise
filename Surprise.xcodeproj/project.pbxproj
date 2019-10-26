@@ -10,6 +10,7 @@
 		17E7967E55527EF367A9022E /* Pods_Surprise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006A5A359DCA4FE63AFB630E /* Pods_Surprise.framework */; };
 		22730F8CD929089C6D222F95 /* Pods_SurpriseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6821CC4B7F738AAFBA4E4FE1 /* Pods_SurpriseUITests.framework */; };
 		8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */; };
+		8811A7002364AFFB0069E9A9 /* AccountViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A6FF2364AFFB0069E9A9 /* AccountViewModels.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC323644AAD0013A254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AC223644AAD0013A254 /* ViewController.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		5F56F97B04B0F769484B0679 /* Pods-SurpriseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurpriseUITests.debug.xcconfig"; path = "Target Support Files/Pods-SurpriseUITests/Pods-SurpriseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6821CC4B7F738AAFBA4E4FE1 /* Pods_SurpriseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurpriseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard++.swift"; sourceTree = "<group>"; };
+		8811A6FF2364AFFB0069E9A9 /* AccountViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModels.swift; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC223644AAD0013A254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				88A60AF3236474CB0013A254 /* AccountViewController.swift */,
 				88A60AF5236478530013A254 /* AccountInteractor.swift */,
+				8811A6FF2364AFFB0069E9A9 /* AccountViewModels.swift */,
 				88A60AF9236478880013A254 /* AccountPresenter.swift */,
 			);
 			path = Account;
@@ -450,6 +453,7 @@
 				88A60AC323644AAD0013A254 /* ViewController.swift in Sources */,
 				88A60AF4236474CB0013A254 /* AccountViewController.swift in Sources */,
 				88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */,
+				8811A7002364AFFB0069E9A9 /* AccountViewModels.swift in Sources */,
 				8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */,
 				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,
 				88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */,

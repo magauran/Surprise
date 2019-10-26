@@ -126,6 +126,9 @@
                         <viewLayoutGuide key="safeArea" id="hvP-mg-NjL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="user_male" id="lm4-0U-ytW"/>
+                    <connections>
+                        <outlet property="tableView" destination="u6X-PN-URW" id="c88-d3-yiW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV2-Z4-zb8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -38,16 +38,16 @@ private struct AccountAssembly: Assembly {
         container.register(AccountViewController.self) { _ in
             UIStoryboard.main.instantiate()
         }.initCompleted {
-            $1.interactor = $0 ~> AccountInteractor.self
+            $1.interactor = $0 ~> AccountBusinessLogic.self
         }
 
-        container.register(AccountInteractor.self) {
+        container.register(AccountBusinessLogic.self) {
             let interactor = AccountInteractor()
-            interactor.presenter = $0 ~> AccountPresenter.self
+            interactor.presenter = $0 ~> AccountPresentationLogic.self
             return interactor
         }
 
-        container.register(AccountPresenter.self) {
+        container.register(AccountPresentationLogic.self) {
             let presenter = AccountPresenter()
             presenter.viewController = $0 ~> AccountViewController.self
             return presenter

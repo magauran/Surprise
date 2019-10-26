@@ -25,7 +25,6 @@ opt_in_rules:
   - number_separator
   - operator_usage_whitespace
   - override_in_extension
-  - prohibited_interface_builder
   - prohibited_super_call
   - sorted_first_last
   - switch_case_alignment
