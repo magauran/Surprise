@@ -6,7 +6,6 @@ opt_in_rules:
   - closure_spacing
   - contains_over_filter_count
   - contains_over_first_not_nil
-  - convenience_type
   - discouraged_object_literal
   - empty_count
   - empty_string

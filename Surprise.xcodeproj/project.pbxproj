@@ -25,6 +25,11 @@
 		8811A71F236515200069E9A9 /* AccountAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A71E236515200069E9A9 /* AccountAssembler.swift */; };
 		8811A721236517840069E9A9 /* AccountMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A720236517840069E9A9 /* AccountMenuItemCell.swift */; };
 		8811A72323651A3F0069E9A9 /* NSObject++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A72223651A3F0069E9A9 /* NSObject++.swift */; };
+		8811A727236523590069E9A9 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A726236523590069E9A9 /* AccountService.swift */; };
+		886A032C236532A50066DC84 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A032B236532A50066DC84 /* AppConfig.swift */; };
+		886A032E236532F70066DC84 /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A032D236532F70066DC84 /* AuthPlugin.swift */; };
+		886A0330236533330066DC84 /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A032F236533330066DC84 /* AccountAPI.swift */; };
+		886A0332236533C50066DC84 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A0331236533C50066DC84 /* Profile.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
 		88A60ACB23644AAE0013A254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */; };
@@ -80,6 +85,11 @@
 		8811A71E236515200069E9A9 /* AccountAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembler.swift; sourceTree = "<group>"; };
 		8811A720236517840069E9A9 /* AccountMenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMenuItemCell.swift; sourceTree = "<group>"; };
 		8811A72223651A3F0069E9A9 /* NSObject++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject++.swift"; sourceTree = "<group>"; };
+		8811A726236523590069E9A9 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		886A032B236532A50066DC84 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		886A032D236532F70066DC84 /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
+		886A032F236533330066DC84 /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
+		886A0331236533C50066DC84 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC723644AAE0013A254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,8 +184,27 @@
 				88A60ABE23644AAD0013A254 /* AppDelegate.swift */,
 				88A60AFB23647C500013A254 /* AppAssembler.swift */,
 				8811A70C2364F9680069E9A9 /* AppRouter.swift */,
+				886A032B236532A50066DC84 /* AppConfig.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		8811A72523651DEF0069E9A9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8811A726236523590069E9A9 /* AccountService.swift */,
+				886A032F236533330066DC84 /* AccountAPI.swift */,
+				886A032D236532F70066DC84 /* AuthPlugin.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		886A0333236533ED0066DC84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				886A0331236533C50066DC84 /* Profile.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		88A60AB223644AAD0013A254 = {
@@ -205,7 +234,9 @@
 			children = (
 				8811A72423651CD90069E9A9 /* App */,
 				8811A7052364F48D0069E9A9 /* Extensions */,
+				886A0333236533ED0066DC84 /* Models */,
 				88A60AF7236478620013A254 /* Modules */,
+				8811A72523651DEF0069E9A9 /* Services */,
 				88A60AC723644AAE0013A254 /* Assets.xcassets */,
 				88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */,
 				88A60ACC23644AAE0013A254 /* Info.plist */,
@@ -497,6 +528,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Surprise/Pods-Surprise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectAutoregistration/SwinjectAutoregistration.framework",
 			);
@@ -504,6 +538,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectAutoregistration.framework",
 			);
@@ -520,18 +557,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				8811A70B2364F9370069E9A9 /* AccountRouter.swift in Sources */,
+				886A0332236533C50066DC84 /* Profile.swift in Sources */,
 				8811A71F236515200069E9A9 /* AccountAssembler.swift in Sources */,
 				8811A7072364F4A00069E9A9 /* UIImage++.swift in Sources */,
+				886A032C236532A50066DC84 /* AppConfig.swift in Sources */,
 				8811A7042364E5990069E9A9 /* UITableView++.swift in Sources */,
 				8811A70D2364F9680069E9A9 /* AppRouter.swift in Sources */,
+				886A032E236532F70066DC84 /* AuthPlugin.swift in Sources */,
 				88A60AF4236474CB0013A254 /* AccountViewController.swift in Sources */,
 				8811A7022364D2A70069E9A9 /* AccountBottomView.swift in Sources */,
 				8811A711236501280069E9A9 /* AboutAssembler.swift in Sources */,
 				88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */,
 				8811A7002364AFFB0069E9A9 /* AccountViewModels.swift in Sources */,
 				8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */,
+				886A0330236533330066DC84 /* AccountAPI.swift in Sources */,
 				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,
 				88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */,
+				8811A727236523590069E9A9 /* AccountService.swift in Sources */,
 				8811A713236503360069E9A9 /* AboutViewController.swift in Sources */,
 				88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */,
 				8811A719236512DF0069E9A9 /* SettingsAssembler.swift in Sources */,

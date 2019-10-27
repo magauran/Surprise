@@ -2,8 +2,10 @@ platform :ios, '11.0'
 
 target 'Surprise' do
   use_frameworks!
+  inhibit_all_warnings!
 
   # Pods for Surprise
+  pod 'Moya', '~> 13.0.1'
   pod 'SwiftLint', '~> 0.36.0'
   pod 'Swinject', '~> 2.7.1'
   pod 'SwinjectAutoregistration', '~> 2.6.1'

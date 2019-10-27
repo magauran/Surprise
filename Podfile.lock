@@ -1,25 +1,39 @@
 PODS:
+  - Alamofire (4.9.0)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Result (4.1.0)
   - SwiftLint (0.36.0)
   - Swinject (2.7.1)
   - SwinjectAutoregistration (2.6.1):
     - Swinject (~> 2.6)
 
 DEPENDENCIES:
+  - Moya (~> 13.0.1)
   - SwiftLint (~> 0.36.0)
   - Swinject (~> 2.7.1)
   - SwinjectAutoregistration (~> 2.6.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Moya
+    - Result
     - SwiftLint
     - Swinject
     - SwinjectAutoregistration
 
 SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: d0de7e48db3601b8b130f2f84e5a8399e0224135
 
-PODFILE CHECKSUM: 80b4d10156e0e96166d7b711cdd7bed43afff417
+PODFILE CHECKSUM: 2f018f260a340c592bc3b56ce0126ea6e61fa21c
 
 COCOAPODS: 1.6.1
