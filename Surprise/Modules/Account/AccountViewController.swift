@@ -83,5 +83,7 @@ extension AccountViewController: UITableViewDelegate {
         let menuItem = menuItems[indexPath.row].item
 
         self.interactor.openMenuItem(menuItem)
+
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }
