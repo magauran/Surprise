@@ -31,6 +31,7 @@
 		886A0330236533330066DC84 /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A032F236533330066DC84 /* AccountAPI.swift */; };
 		886A0332236533C50066DC84 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A0331236533C50066DC84 /* Profile.swift */; };
 		88A1FB802365B1D3005FA6CC /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */; };
+		88A1FB822365B6F1005FA6CC /* CachePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB812365B6F1005FA6CC /* CachePlugin.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
 		88A60ACB23644AAE0013A254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */; };
@@ -92,6 +93,7 @@
 		886A032F236533330066DC84 /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
 		886A0331236533C50066DC84 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
+		88A1FB812365B6F1005FA6CC /* CachePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePlugin.swift; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC723644AAE0013A254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				8811A726236523590069E9A9 /* AccountService.swift */,
 				886A032F236533330066DC84 /* AccountAPI.swift */,
 				886A032D236532F70066DC84 /* AuthPlugin.swift */,
+				88A1FB812365B6F1005FA6CC /* CachePlugin.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				8811A70B2364F9370069E9A9 /* AccountRouter.swift in Sources */,
 				886A0332236533C50066DC84 /* Profile.swift in Sources */,
 				8811A71F236515200069E9A9 /* AccountAssembler.swift in Sources */,
+				88A1FB822365B6F1005FA6CC /* CachePlugin.swift in Sources */,
 				8811A7072364F4A00069E9A9 /* UIImage++.swift in Sources */,
 				886A032C236532A50066DC84 /* AppConfig.swift in Sources */,
 				8811A7042364E5990069E9A9 /* UITableView++.swift in Sources */,
