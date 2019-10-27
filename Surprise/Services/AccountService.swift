@@ -8,9 +8,14 @@
 
 import Moya
 
-struct AccountService {
+protocol AccountService {
+    func fetchAccount(then handler: @escaping (Result<Profile, MoyaError>) -> Void)
+}
+
+struct AccountServiceImpl {
     init(tokenSource: TokenSource) {
         self.provider = MoyaProvider<AccountAPI>(
+            callbackQueue: DispatchQueue.global(qos: .utility),
             plugins: [
                 AuthPlugin(tokenClosure: { tokenSource.token })
             ]
@@ -18,7 +23,9 @@ struct AccountService {
     }
 
     private let provider: MoyaProvider<AccountAPI>
+}
 
+extension AccountServiceImpl: AccountService {
     func fetchAccount(then handler: @escaping (Result<Profile, MoyaError>) -> Void) {
         self.provider.request(.profile) { result in
             switch result {

@@ -62,7 +62,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV2-Z4-zb8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="JSW-U7-jCg">
+                <view contentMode="scaleToFill" id="JSW-U7-jCg" customClass="AccountHeaderView" customModule="Surprise" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="191"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -109,6 +109,11 @@
                         <constraint firstItem="wuW-uR-HXJ" firstAttribute="top" secondItem="8oe-gl-gXB" secondAttribute="bottom" constant="1" id="zw1-BP-E2Q"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="Yn6-rE-1ud"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="7uw-9z-1yv" id="6R7-m6-De9"/>
+                        <outlet property="emailLabel" destination="wuW-uR-HXJ" id="Xpk-Vq-VvU"/>
+                        <outlet property="nameLabel" destination="8oe-gl-gXB" id="ZvD-Ph-Po3"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="SQY-ce-dBi" customClass="AccountBottomView" customModule="Surprise" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>

@@ -20,3 +20,8 @@ struct MenuItemViewModel {
     let title: String
     let image: UIImage?
 }
+
+struct AccountHeaderViewModel {
+    let name: String
+    let email: String
+}

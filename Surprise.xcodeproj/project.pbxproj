@@ -30,6 +30,7 @@
 		886A032E236532F70066DC84 /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A032D236532F70066DC84 /* AuthPlugin.swift */; };
 		886A0330236533330066DC84 /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A032F236533330066DC84 /* AccountAPI.swift */; };
 		886A0332236533C50066DC84 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A0331236533C50066DC84 /* Profile.swift */; };
+		88A1FB802365B1D3005FA6CC /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
 		88A60ACB23644AAE0013A254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */; };
@@ -90,6 +91,7 @@
 		886A032D236532F70066DC84 /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
 		886A032F236533330066DC84 /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
 		886A0331236533C50066DC84 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC723644AAE0013A254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				8811A6FF2364AFFB0069E9A9 /* AccountViewModels.swift */,
 				88A60AF9236478880013A254 /* AccountPresenter.swift */,
 				8811A70A2364F9370069E9A9 /* AccountRouter.swift */,
+				88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */,
 				8811A7012364D2A70069E9A9 /* AccountBottomView.swift */,
 				88A60AEF236467EE0013A254 /* Account.storyboard */,
 			);
@@ -574,6 +577,7 @@
 				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,
 				88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */,
 				8811A727236523590069E9A9 /* AccountService.swift in Sources */,
+				88A1FB802365B1D3005FA6CC /* AccountHeaderView.swift in Sources */,
 				8811A713236503360069E9A9 /* AboutViewController.swift in Sources */,
 				88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */,
 				8811A719236512DF0069E9A9 /* SettingsAssembler.swift in Sources */,

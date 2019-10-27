@@ -10,12 +10,13 @@ import UIKit
 
 protocol AccountDispayLogic: UIViewController {
     func displayMenu(viewModel: MenuViewModel)
+    func displayHeader(viewModel: AccountHeaderViewModel)
 }
 
 final class AccountViewController: UIViewController {
     var interactor: AccountBusinessLogic!
 
-    @IBOutlet private var headerView: UIView!
+    @IBOutlet private var headerView: AccountHeaderView!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var footerView: AccountBottomView!
 
@@ -25,6 +26,7 @@ final class AccountViewController: UIViewController {
         super.viewDidLoad()
         self.setupTableView()
         self.interactor.fetchMenuItems()
+        self.interactor.fetchUserInfo()
     }
 
     private func setupTableView() {
@@ -38,6 +40,10 @@ extension AccountViewController: AccountDispayLogic {
     func displayMenu(viewModel: MenuViewModel) {
         self.menuSections = viewModel
         self.tableView.reloadData()
+    }
+
+    func displayHeader(viewModel: AccountHeaderViewModel) {
+        self.headerView.configure(with: viewModel)
     }
 }
 

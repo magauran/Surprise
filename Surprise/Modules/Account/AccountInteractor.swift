@@ -11,6 +11,7 @@ import Foundation
 protocol AccountBusinessLogic {
     func fetchMenuItems()
     func openMenuItem(_ menuItem: MenuItem)
+    func fetchUserInfo()
 }
 
 enum MenuItem {
@@ -19,6 +20,11 @@ enum MenuItem {
 
 final class AccountInteractor {
     var presenter: AccountPresentationLogic!
+    private let accountService: AccountService
+
+    init(accountService: AccountService) {
+        self.accountService = accountService
+    }
 }
 
 extension AccountInteractor: AccountBusinessLogic {
@@ -45,6 +51,18 @@ extension AccountInteractor: AccountBusinessLogic {
         case .legal:
             let url = URL(string: "https://surprizeme.ru/partners/")
             self.presenter.open(url: url)
+        }
+    }
+
+    func fetchUserInfo() {
+        self.accountService.fetchAccount { [weak self] result in
+            switch result {
+            case .success(let account):
+                DispatchQueue.main.async {
+                    self?.presenter.presentUserInfo(account)
+                }
+            case .failure: ()
+            }
         }
     }
 }

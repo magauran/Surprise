@@ -50,5 +50,7 @@ private struct AppAssembly: Assembly {
             let appAssembler = $0 ~> AppAssembler.self
             return AccountAssembler(parent: appAssembler.assembler)
         }
+
+        container.autoregister(TokenSource.self, initializer: AppConfig.init)
     }
 }

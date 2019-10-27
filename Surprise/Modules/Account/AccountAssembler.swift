@@ -27,7 +27,8 @@ private struct AccountAssembly: Assembly {
         }
 
         container.register(AccountBusinessLogic.self) {
-            let interactor = AccountInteractor()
+            let service = $0 ~> AccountService.self
+            let interactor = AccountInteractor(accountService: service)
             interactor.presenter = $0 ~> AccountPresentationLogic.self
             return interactor
         }
@@ -60,6 +61,12 @@ private struct AccountAssembly: Assembly {
             presenter.viewController = $0 ~> AccountViewController.self
             presenter.router = $0 ~> AccountRoutingLogic.self
             return presenter
+        }
+
+        container.register(AccountService.self) {
+            let tokenSource = $0 ~> TokenSource.self
+            let service = AccountServiceImpl(tokenSource: tokenSource)
+            return service
         }
     }
 }

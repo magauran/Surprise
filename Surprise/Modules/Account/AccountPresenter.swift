@@ -11,6 +11,7 @@ import class UIKit.UIImage
 
 protocol AccountPresentationLogic {
     func presentMenu(_ menuItems: [[MenuItem]])
+    func presentUserInfo(_ profile: Profile)
     func showAboutScreen()
     func showSettingsScreen()
     func open(url: URL?)
@@ -28,6 +29,11 @@ extension AccountPresenter: AccountPresentationLogic {
             MenuSectionViewModel(items: items.map(Self.makeMenuItemViewModel))
         }
         self.viewController?.displayMenu(viewModel: menuSections)
+    }
+
+    func presentUserInfo(_ profile: Profile) {
+        let accountHeaderViewModel = Self.makeAccountHeaderViewModel(profile: profile)
+        self.viewController?.displayHeader(viewModel: accountHeaderViewModel)
     }
 
     func showAboutScreen() {
@@ -71,5 +77,10 @@ extension AccountPresenter {
         }
 
         return MenuItemViewModel(item: menuItem, title: title, image: image)
+    }
+
+    static func makeAccountHeaderViewModel(profile: Profile) -> AccountHeaderViewModel {
+        let viewModel = AccountHeaderViewModel(name: profile.firstName, email: profile.email)
+        return viewModel
     }
 }
