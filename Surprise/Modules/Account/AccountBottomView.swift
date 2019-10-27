@@ -11,7 +11,7 @@ import UIKit
 final class AccountBottomView: UIView {
     @IBOutlet var logoutButton: UIButton! {
         didSet {
-            self.logoutButton.layer.cornerRadius = 10
+            self.logoutButton.layer.cornerRadius = 20
             self.logoutButton.layer.masksToBounds = true
             UIColor(named: "logoutButton").map {
                 let image = UIImage.imageWith(color: $0)
