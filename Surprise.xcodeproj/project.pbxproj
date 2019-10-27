@@ -19,6 +19,10 @@
 		8811A711236501280069E9A9 /* AboutAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A710236501280069E9A9 /* AboutAssembler.swift */; };
 		8811A713236503360069E9A9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A712236503360069E9A9 /* AboutViewController.swift */; };
 		8811A715236503FF0069E9A9 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8811A714236503FF0069E9A9 /* About.storyboard */; };
+		8811A719236512DF0069E9A9 /* SettingsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A718236512DF0069E9A9 /* SettingsAssembler.swift */; };
+		8811A71B2365130C0069E9A9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A71A2365130C0069E9A9 /* SettingsViewController.swift */; };
+		8811A71D2365132E0069E9A9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8811A71C2365132E0069E9A9 /* Settings.storyboard */; };
+		8811A71F236515200069E9A9 /* AccountAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A71E236515200069E9A9 /* AccountAssembler.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC323644AAD0013A254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AC223644AAD0013A254 /* ViewController.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
@@ -70,6 +74,10 @@
 		8811A710236501280069E9A9 /* AboutAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAssembler.swift; sourceTree = "<group>"; };
 		8811A712236503360069E9A9 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		8811A714236503FF0069E9A9 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		8811A718236512DF0069E9A9 /* SettingsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssembler.swift; sourceTree = "<group>"; };
+		8811A71A2365130C0069E9A9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8811A71C2365132E0069E9A9 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		8811A71E236515200069E9A9 /* AccountAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembler.swift; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC223644AAD0013A254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +159,8 @@
 		8811A70F236501180069E9A9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				8811A718236512DF0069E9A9 /* SettingsAssembler.swift */,
+				8811A71A2365130C0069E9A9 /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 				88A60AC723644AAE0013A254 /* Assets.xcassets */,
 				88A60AEF236467EE0013A254 /* Main.storyboard */,
 				8811A714236503FF0069E9A9 /* About.storyboard */,
+				8811A71C2365132E0069E9A9 /* Settings.storyboard */,
 				88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */,
 				88A60ACC23644AAE0013A254 /* Info.plist */,
 			);
@@ -228,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				88A60AF3236474CB0013A254 /* AccountViewController.swift */,
+				8811A71E236515200069E9A9 /* AccountAssembler.swift */,
 				88A60AF5236478530013A254 /* AccountInteractor.swift */,
 				8811A6FF2364AFFB0069E9A9 /* AccountViewModels.swift */,
 				88A60AF9236478880013A254 /* AccountPresenter.swift */,
@@ -363,6 +375,7 @@
 				88A60ACB23644AAE0013A254 /* LaunchScreen.storyboard in Resources */,
 				8811A715236503FF0069E9A9 /* About.storyboard in Resources */,
 				88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */,
+				8811A71D2365132E0069E9A9 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8811A70B2364F9370069E9A9 /* AccountRouter.swift in Sources */,
+				8811A71F236515200069E9A9 /* AccountAssembler.swift in Sources */,
 				88A60AF223646F650013A254 /* TabBarController.swift in Sources */,
 				8811A7072364F4A00069E9A9 /* UIImage++.swift in Sources */,
 				8811A7042364E5990069E9A9 /* UITableView++.swift in Sources */,
@@ -514,6 +528,8 @@
 				88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */,
 				8811A713236503360069E9A9 /* AboutViewController.swift in Sources */,
 				88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */,
+				8811A719236512DF0069E9A9 /* SettingsAssembler.swift in Sources */,
+				8811A71B2365130C0069E9A9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

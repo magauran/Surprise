@@ -35,7 +35,7 @@ extension AccountPresenter: AccountPresentationLogic {
     }
 
     func showSettingsScreen() {
-
+        self.router?.showSettingsScreen()
     }
 
     func open(url: URL?) {

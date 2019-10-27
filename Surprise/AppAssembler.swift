@@ -14,7 +14,7 @@ struct AppAssembler {
     let assembler: Assembler
 
     init(parent: Assembler?) {
-        self.assembler = Assembler([AppAssembly(), AccountAssembly()], parent: parent)
+        self.assembler = Assembler([AppAssembly()], parent: parent)
     }
 }
 
@@ -27,7 +27,8 @@ private struct AppAssembly: Assembly {
             let viewController1 = UIViewController()
             viewController1.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "search"), tag: 1)
 
-            let viewController2 = $0 ~> AccountViewController.self
+            let accountAssembler = $0 ~> AccountAssembler.self
+            let viewController2 = accountAssembler.resolver ~> AccountViewController.self
             viewController2.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "user_male"), tag: 2)
 
             let tabBarController = UITabBarController()
@@ -37,50 +38,17 @@ private struct AppAssembly: Assembly {
         }
 
         container.autoregister(AppRouter.self, initializer: AppRouter.init)
+
         container.autoregister(AppAssembler.self) {
             guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
                 fatalError("Could not cast delegate to type AppDelegate.")
             }
             return delegate.assembler
         }
-    }
-}
 
-private struct AccountAssembly: Assembly {
-    func assemble(container: Container) {
-        container.register(AccountViewController.self) { _ in
-            UIStoryboard.main.instantiate()
-        }.initCompleted {
-            $1.interactor = $0 ~> AccountBusinessLogic.self
-        }
-
-        container.register(AccountBusinessLogic.self) {
-            let interactor = AccountInteractor()
-            interactor.presenter = $0 ~> AccountPresentationLogic.self
-            return interactor
-        }
-
-        container.register(AboutAssembler.self) {
+        container.register(AccountAssembler.self) {
             let appAssembler = $0 ~> AppAssembler.self
-            return AboutAssembler(parent: appAssembler.assembler)
-        }
-
-        container.register(AccountRoutingLogic.self) {
-            let viewController = $0 ~> AccountViewController.self
-            let appRouter = $0 ~> AppRouter.self
-            let aboutAssembler = $0 ~> AboutAssembler.self
-            return AccountRouter(
-                transitionHandler: viewController,
-                appRouter: appRouter,
-                aboutAssembler: aboutAssembler.assembler
-            )
-        }
-
-        container.register(AccountPresentationLogic.self) {
-            let presenter = AccountPresenter()
-            presenter.viewController = $0 ~> AccountViewController.self
-            presenter.router = $0 ~> AccountRoutingLogic.self
-            return presenter
+            return AccountAssembler(parent: appAssembler.assembler)
         }
     }
 }
