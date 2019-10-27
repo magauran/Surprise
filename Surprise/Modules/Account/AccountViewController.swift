@@ -16,7 +16,7 @@ protocol AccountDispayLogic: UIViewController {
 final class AccountViewController: UIViewController {
     var interactor: AccountBusinessLogic!
 
-    @IBOutlet private var headerView: AccountHeaderView!
+    @IBOutlet private var headerView: AccountHeaderView! // TODO: clean storyboard defaults
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var footerView: AccountBottomView!
 

@@ -8,9 +8,17 @@
 
 import Foundation
 
-struct AppConfig {
+protocol LanguageSource: AnyObject {
+    var currentLanguage: String { get set }
+}
+
+final class AppConfig: LanguageSource {
     // swiftlint:disable:next force_unwrapping
     static let baseURL = URL(string: "https://app.surprizeme.ru/api/")!
+
+    // MARK: - LanguageSource
+    @UserDefault("current_language", defaultValue: "en_US")
+    var currentLanguage: String
 }
 
 extension AppConfig: TokenSource {

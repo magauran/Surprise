@@ -58,6 +58,9 @@
                                                     <state key="normal" title="English">
                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapEnglishButton" destination="kWk-07-aNc" eventType="touchUpInside" id="ttn-n3-0Qh"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zen-f2-LiT">
                                                     <rect key="frame" x="106" y="8" width="78" height="40"/>
@@ -69,6 +72,9 @@
                                                     <state key="normal" title="Russian">
                                                         <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapRussianButton" destination="kWk-07-aNc" eventType="touchUpInside" id="yPf-8A-rIv"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -287,7 +293,6 @@
                     <connections>
                         <outlet property="emailLabel" destination="QRX-qT-0hq" id="6s7-Ik-TMg"/>
                         <outlet property="englishButton" destination="cbl-rJ-doQ" id="CkM-PK-DPO"/>
-                        <outlet property="enhlishButton" destination="cbl-rJ-doQ" id="qZE-i5-wnM"/>
                         <outlet property="nameTextField" destination="4YW-ib-wnI" id="tGw-8i-FgR"/>
                         <outlet property="russianButton" destination="zen-f2-LiT" id="wYE-0z-0bx"/>
                         <outlet property="switch1" destination="Xao-m4-O1z" id="qJd-eX-Qnj"/>

@@ -34,7 +34,8 @@ private struct SettingsAssembly: Assembly {
 
         container.register(SettingsBusinessLogic.self) {
             let presenter = $0 ~> SettingsPresentationLogic.self
-            let interactor = SettingsInteractor(presenter: presenter)
+            let languageSource = $0 ~> LanguageSource.self
+            let interactor = SettingsInteractor(presenter: presenter, languageSource: languageSource)
             return interactor
         }
     }

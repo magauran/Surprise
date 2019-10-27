@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SettingsPresentationLogic {
-
+    func presentSettings(language: TourLanguage)
 }
 
 final class SettingsPresenter {
@@ -22,5 +22,7 @@ final class SettingsPresenter {
 
 // MARK: - SettingsPresentationLogic
 extension SettingsPresenter: SettingsPresentationLogic {
-    
+    func presentSettings(language: TourLanguage) {
+        self.view.updateLanguageButton(language: language)
+    }
 }

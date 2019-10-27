@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SettingsDisplayLogic {
-
+    func updateLanguageButton(language: TourLanguage)
 }
 
 final class SettingsViewController: UITableViewController {
@@ -24,14 +24,30 @@ final class SettingsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.interactor.fetchSettingsState()
+    }
+
+    @IBAction private func didTapEnglishButton() {
+        self.interactor.didSelectLanguage(.english)
+    }
+
+    @IBAction private func didTapRussianButton() {
+        self.interactor.didSelectLanguage(.russian)
     }
 }
 
 // MARK: - SettingsDisplayLogic
 extension SettingsViewController: SettingsDisplayLogic {
-    
+    func updateLanguageButton(language: TourLanguage) {
+        switch language {
+        case .english:
+            self.englishButton.backgroundColor = Style.selectedLanguageButtonColor
+            self.russianButton.backgroundColor = Style.normalLanguageButtonColor
+        case .russian:
+            self.englishButton.backgroundColor = Style.normalLanguageButtonColor
+            self.russianButton.backgroundColor = Style.selectedLanguageButtonColor
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -49,5 +65,13 @@ extension SettingsViewController {
         headerView.textLabel?.font = .systemFont(ofSize: 18, weight: .heavy)
         headerView.textLabel?.text = headerView.textLabel?.text?.lowercased().capitalized
         headerView.textLabel?.textColor = .black
+    }
+}
+
+// MARK: - Style
+extension SettingsViewController {
+    private enum Style {
+        static let selectedLanguageButtonColor = UIColor(named: "languageButton")
+        static let normalLanguageButtonColor = UIColor.clear
     }
 }

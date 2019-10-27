@@ -51,6 +51,7 @@
 		88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AFB23647C500013A254 /* AppAssembler.swift */; };
 		88D07C57236642A90096D2BE /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C56236642A90096D2BE /* SettingsInteractor.swift */; };
 		88D07C592366440A0096D2BE /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C582366440A0096D2BE /* SettingsPresenter.swift */; };
+		88D07C5C236648420096D2BE /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C5B236648420096D2BE /* UserDefault.swift */; };
 		CB8BCE807F0CA91A04B3AFD1 /* Pods_SurpriseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07004C838422C47B12E17340 /* Pods_SurpriseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		88A60AFB23647C500013A254 /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
 		88D07C56236642A90096D2BE /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		88D07C582366440A0096D2BE /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		88D07C5B236648420096D2BE /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		D020D10873280F0D6F8DA671 /* Pods-SurpriseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurpriseTests.release.xcconfig"; path = "Target Support Files/Pods-SurpriseTests/Pods-SurpriseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,12 +274,13 @@
 			isa = PBXGroup;
 			children = (
 				8811A72423651CD90069E9A9 /* App */,
+				88A1FB8D236600DD005FA6CC /* CoreUI */,
 				8811A7052364F48D0069E9A9 /* Extensions */,
 				886A0333236533ED0066DC84 /* Models */,
 				88A60AF7236478620013A254 /* Modules */,
 				8811A72523651DEF0069E9A9 /* Services */,
+				88D07C5A2366481A0096D2BE /* Utils */,
 				88A60AC723644AAE0013A254 /* Assets.xcassets */,
-				88A1FB8D236600DD005FA6CC /* CoreUI */,
 				88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */,
 				88A60ACC23644AAE0013A254 /* Info.plist */,
 			);
@@ -327,6 +330,14 @@
 				88A60AEF236467EE0013A254 /* Account.storyboard */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		88D07C5A2366481A0096D2BE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				88D07C5B236648420096D2BE /* UserDefault.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		9930053AFEA235DC4ADE1820 /* Pods */ = {
@@ -633,6 +644,7 @@
 				8811A721236517840069E9A9 /* AccountMenuItemCell.swift in Sources */,
 				88A1FB932366285E005FA6CC /* AboutViewModels.swift in Sources */,
 				8811A72323651A3F0069E9A9 /* NSObject++.swift in Sources */,
+				88D07C5C236648420096D2BE /* UserDefault.swift in Sources */,
 				8811A71B2365130C0069E9A9 /* SettingsViewController.swift in Sources */,
 				88A1FB8A2365D6DD005FA6CC /* UIApplication++.swift in Sources */,
 				88D07C592366440A0096D2BE /* SettingsPresenter.swift in Sources */,

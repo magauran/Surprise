@@ -52,5 +52,6 @@ private struct AppAssembly: Assembly {
         }
 
         container.autoregister(TokenSource.self, initializer: AppConfig.init)
+        container.autoregister(LanguageSource.self, initializer: AppConfig.init)
     }
 }
