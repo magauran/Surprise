@@ -8,7 +8,7 @@
 
 import Moya
 
-protocol MoyaAuthorizable {
+protocol AuthorizedTargetType: TargetType {
     var needsAuth: Bool { get }
 }
 
@@ -22,7 +22,7 @@ struct AuthPlugin: PluginType {
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         guard
             let token = self.tokenClosure(),
-            let target = target as? MoyaAuthorizable,
+            let target = target as? AuthorizedTargetType,
             target.needsAuth
         else {
             return request

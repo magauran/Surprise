@@ -12,7 +12,7 @@ enum AccountAPI {
     case profile
 }
 
-extension AccountAPI: TargetType {
+extension AccountAPI: AuthorizedTargetType {
     var baseURL: URL { return AppConfig.baseURL }
 
     var path: String {
@@ -42,20 +42,10 @@ extension AccountAPI: TargetType {
         case .profile: return [:]
         }
     }
-}
 
-extension AccountAPI: MoyaAuthorizable {
     var needsAuth: Bool {
         switch self {
         case .profile: return true
-        }
-    }
-}
-
-extension AccountAPI: MoyaCacheable {
-    var cachePolicy: MoyaCacheable.CachePolicy {
-        switch self {
-        case .profile: return .reloadIgnoringCacheData
         }
     }
 }
