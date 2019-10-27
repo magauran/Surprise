@@ -80,7 +80,11 @@ extension AccountPresenter {
     }
 
     static func makeAccountHeaderViewModel(profile: Profile) -> AccountHeaderViewModel {
-        let viewModel = AccountHeaderViewModel(name: profile.firstName, email: profile.email)
+        let viewModel = AccountHeaderViewModel(
+            name: profile.firstName,
+            email: profile.email,
+            avatarURL: profile.avatarURL
+        )
         return viewModel
     }
 }

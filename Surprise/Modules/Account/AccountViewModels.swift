@@ -24,4 +24,5 @@ struct MenuItemViewModel {
 struct AccountHeaderViewModel {
     let name: String
     let email: String
+    let avatarURL: URL
 }

@@ -66,7 +66,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="191"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_male" translatesAutoresizingMaskIntoConstraints="NO" id="7uw-9z-1yv">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7uw-9z-1yv">
                             <rect key="frame" x="167" y="17" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="919-0G-FcA"/>

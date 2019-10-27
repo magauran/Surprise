@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class AccountHeaderView: UIView {
     typealias ViewModel = AccountHeaderViewModel
@@ -18,5 +19,24 @@ final class AccountHeaderView: UIView {
     func configure(with viewModel: ViewModel) {
         self.nameLabel.text = viewModel.name
         self.emailLabel.text = viewModel.email
+
+        let processor = self.makeImageProcessor()
+        self.avatarImageView.kf.indicatorType = .activity
+        self.avatarImageView.kf.setImage(
+            with: viewModel.avatarURL,
+            placeholder: nil,
+            options: [
+                .processor(processor),
+                .backgroundDecode,
+            ]
+        )
+    }
+}
+
+// MARK: - Factory
+extension AccountHeaderView {
+    private func makeImageProcessor() -> ImageProcessor {
+        return DownsamplingImageProcessor(size: self.avatarImageView.frame.size)
+            |> RoundCornerImageProcessor(cornerRadius: self.avatarImageView.frame.size.width / 2)
     }
 }
