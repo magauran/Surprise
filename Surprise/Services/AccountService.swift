@@ -19,19 +19,21 @@ struct AccountService {
 
     private let provider: MoyaProvider<AccountAPI>
 
-    func fetchAccount(then handler: (Result<Profile, Error>) -> Void) {
+    func fetchAccount(then handler: @escaping (Result<Profile, MoyaError>) -> Void) {
         self.provider.request(.profile) { result in
             switch result {
             case .success(let response):
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
                     let profile = try filteredResponse.map(Profile.self)
-                    print(profile)
+                    handler(.success(profile))
+                } catch let moyaError as MoyaError {
+                    handler(.failure(moyaError))
                 } catch {
-                    print(error)
+                    handler(.failure(MoyaError.underlying(error, response)))
                 }
             case .failure(let error):
-                print(error)
+                handler(.failure(MoyaError.underlying(error, nil)))
             }
         }
     }
