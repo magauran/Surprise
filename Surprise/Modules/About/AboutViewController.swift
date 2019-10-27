@@ -29,7 +29,7 @@ final class AboutViewController: UIViewController {
 
     var interactor: AboutBusinessLogic!
 
-    @IBOutlet private var iconImageView: UIImageView!
+    @IBOutlet @Rounded(25) private var iconImageView: UIImageView!
     @IBOutlet private var appNameLabel: UILabel!
     @IBOutlet private var appDescriptionLabel: UILabel!
     @IBOutlet private var aboutStackView: UIStackView!
