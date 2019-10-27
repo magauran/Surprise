@@ -23,6 +23,8 @@
 		8811A71B2365130C0069E9A9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A71A2365130C0069E9A9 /* SettingsViewController.swift */; };
 		8811A71D2365132E0069E9A9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8811A71C2365132E0069E9A9 /* Settings.storyboard */; };
 		8811A71F236515200069E9A9 /* AccountAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A71E236515200069E9A9 /* AccountAssembler.swift */; };
+		8811A721236517840069E9A9 /* AccountMenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A720236517840069E9A9 /* AccountMenuItemCell.swift */; };
+		8811A72323651A3F0069E9A9 /* NSObject++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8811A72223651A3F0069E9A9 /* NSObject++.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC323644AAD0013A254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AC223644AAD0013A254 /* ViewController.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		8811A71A2365130C0069E9A9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8811A71C2365132E0069E9A9 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		8811A71E236515200069E9A9 /* AccountAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAssembler.swift; sourceTree = "<group>"; };
+		8811A720236517840069E9A9 /* AccountMenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMenuItemCell.swift; sourceTree = "<group>"; };
+		8811A72223651A3F0069E9A9 /* NSObject++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject++.swift"; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC223644AAD0013A254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 		8811A7052364F48D0069E9A9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8811A72223651A3F0069E9A9 /* NSObject++.swift */,
 				8811A7032364E5990069E9A9 /* UITableView++.swift */,
 				8811A7062364F4A00069E9A9 /* UIImage++.swift */,
 				8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */,
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				88A60AF3236474CB0013A254 /* AccountViewController.swift */,
+				8811A720236517840069E9A9 /* AccountMenuItemCell.swift */,
 				8811A71E236515200069E9A9 /* AccountAssembler.swift */,
 				88A60AF5236478530013A254 /* AccountInteractor.swift */,
 				8811A6FF2364AFFB0069E9A9 /* AccountViewModels.swift */,
@@ -529,6 +535,8 @@
 				8811A713236503360069E9A9 /* AboutViewController.swift in Sources */,
 				88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */,
 				8811A719236512DF0069E9A9 /* SettingsAssembler.swift in Sources */,
+				8811A721236517840069E9A9 /* AccountMenuItemCell.swift in Sources */,
+				8811A72323651A3F0069E9A9 /* NSObject++.swift in Sources */,
 				8811A71B2365130C0069E9A9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

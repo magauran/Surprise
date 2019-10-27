@@ -60,14 +60,8 @@ extension AccountViewController: UITableViewDataSource {
         guard menuItems.indices.contains(indexPath.row) else { return UITableViewCell() }
         let menuItem = menuItems[indexPath.row]
 
-        let cell = UITableViewCell()
-        cell.textLabel?.text = menuItem.title
-        if let image = menuItem.image {
-            let accessoryView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: 20, height: 20)))
-            accessoryView.image = image
-            cell.accessoryView = accessoryView
-        }
-        cell.tintColor = .black
+        let cell: AccountMenuItemCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.configure(with: menuItem)
 
         return cell
     }

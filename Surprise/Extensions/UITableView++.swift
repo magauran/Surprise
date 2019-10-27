@@ -29,3 +29,11 @@ extension UITableView {
         self.tableFooterView = footer
     }
 }
+
+extension UITableView {
+    func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
+        let identifier = T.className
+        // swiftlint:disable:next force_cast
+        return dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! T
+    }
+}
