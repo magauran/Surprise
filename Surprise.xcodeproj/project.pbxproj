@@ -32,6 +32,9 @@
 		886A0332236533C50066DC84 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A0331236533C50066DC84 /* Profile.swift */; };
 		88A1FB802365B1D3005FA6CC /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */; };
 		88A1FB842365CE1D005FA6CC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB832365CE1D005FA6CC /* GradientView.swift */; };
+		88A1FB862365D4FD005FA6CC /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB852365D4FD005FA6CC /* AboutInteractor.swift */; };
+		88A1FB882365D517005FA6CC /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB872365D517005FA6CC /* AboutPresenter.swift */; };
+		88A1FB8A2365D6DD005FA6CC /* UIApplication++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB892365D6DD005FA6CC /* UIApplication++.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
 		88A60ACB23644AAE0013A254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */; };
@@ -94,7 +97,10 @@
 		886A0331236533C50066DC84 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
 		88A1FB832365CE1D005FA6CC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88A1FB852365D4FD005FA6CC /* AboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
+		88A1FB872365D517005FA6CC /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		88A1FB892365D6DD005FA6CC /* UIApplication++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication++.swift"; sourceTree = "<group>"; };
+		88A60ABB23644AAD0013A254 /* Surprise Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Surprise Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC723644AAE0013A254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88A60ACA23644AAE0013A254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 				8811A7032364E5990069E9A9 /* UITableView++.swift */,
 				8811A7062364F4A00069E9A9 /* UIImage++.swift */,
 				8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */,
+				88A1FB892365D6DD005FA6CC /* UIApplication++.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +174,8 @@
 			children = (
 				8811A710236501280069E9A9 /* AboutAssembler.swift */,
 				8811A712236503360069E9A9 /* AboutViewController.swift */,
+				88A1FB852365D4FD005FA6CC /* AboutInteractor.swift */,
+				88A1FB872365D517005FA6CC /* AboutPresenter.swift */,
 				8811A714236503FF0069E9A9 /* About.storyboard */,
 			);
 			path = About;
@@ -226,7 +235,7 @@
 		88A60ABC23644AAD0013A254 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88A60ABB23644AAD0013A254 /* Surprise.app */,
+				88A60ABB23644AAD0013A254 /* Surprise Me.app */,
 				88A60AD123644AAE0013A254 /* SurpriseTests.xctest */,
 				88A60ADC23644AAE0013A254 /* SurpriseUITests.xctest */,
 			);
@@ -327,7 +336,7 @@
 			);
 			name = Surprise;
 			productName = Surprise;
-			productReference = 88A60ABB23644AAD0013A254 /* Surprise.app */;
+			productReference = 88A60ABB23644AAD0013A254 /* Surprise Me.app */;
 			productType = "com.apple.product-type.application";
 		};
 		88A60AD023644AAE0013A254 /* SurpriseTests */ = {
@@ -567,6 +576,7 @@
 				8811A70B2364F9370069E9A9 /* AccountRouter.swift in Sources */,
 				886A0332236533C50066DC84 /* Profile.swift in Sources */,
 				8811A71F236515200069E9A9 /* AccountAssembler.swift in Sources */,
+				88A1FB862365D4FD005FA6CC /* AboutInteractor.swift in Sources */,
 				8811A7072364F4A00069E9A9 /* UIImage++.swift in Sources */,
 				886A032C236532A50066DC84 /* AppConfig.swift in Sources */,
 				8811A7042364E5990069E9A9 /* UITableView++.swift in Sources */,
@@ -581,6 +591,7 @@
 				8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */,
 				886A0330236533330066DC84 /* AccountAPI.swift in Sources */,
 				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,
+				88A1FB882365D517005FA6CC /* AboutPresenter.swift in Sources */,
 				88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */,
 				8811A727236523590069E9A9 /* AccountService.swift in Sources */,
 				88A1FB802365B1D3005FA6CC /* AccountHeaderView.swift in Sources */,
@@ -590,6 +601,7 @@
 				8811A721236517840069E9A9 /* AccountMenuItemCell.swift in Sources */,
 				8811A72323651A3F0069E9A9 /* NSObject++.swift in Sources */,
 				8811A71B2365130C0069E9A9 /* SettingsViewController.swift in Sources */,
+				88A1FB8A2365D6DD005FA6CC /* UIApplication++.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,7 +776,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magauran.Surprise;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Surprise Me";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -784,7 +796,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magauran.Surprise;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Surprise Me";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

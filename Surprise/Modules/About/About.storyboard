@@ -22,7 +22,45 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGY-bf-Cjr" userLabel="Content View" customClass="GradientView" customModule="Surprise" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8yG-OA-TGl">
+                                                <rect key="frame" x="157" y="72" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="eG4-Z7-iRZ"/>
+                                                    <constraint firstAttribute="width" constant="100" id="eIK-Q3-HqK"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFe-FH-2a6">
+                                                <rect key="frame" x="16" y="219.5" width="382" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Ih-2O-aXl">
+                                                <rect key="frame" x="16" y="248.5" width="382" height="581.5"/>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qce-fe-SY0">
+                                                <rect key="frame" x="16" y="180" width="382" height="31.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="qce-fe-SY0" secondAttribute="trailing" constant="16" id="0cK-HH-rJk"/>
+                                            <constraint firstItem="qce-fe-SY0" firstAttribute="leading" secondItem="hGY-bf-Cjr" secondAttribute="leading" constant="16" id="5dJ-7R-AXZ"/>
+                                            <constraint firstItem="8yG-OA-TGl" firstAttribute="centerX" secondItem="hGY-bf-Cjr" secondAttribute="centerX" id="AK7-E0-nyr"/>
+                                            <constraint firstAttribute="trailing" secondItem="PFe-FH-2a6" secondAttribute="trailing" constant="16" id="Kpn-pP-atc"/>
+                                            <constraint firstItem="PFe-FH-2a6" firstAttribute="top" secondItem="qce-fe-SY0" secondAttribute="bottom" constant="8" id="MwB-9W-sUN"/>
+                                            <constraint firstItem="9Ih-2O-aXl" firstAttribute="leading" secondItem="hGY-bf-Cjr" secondAttribute="leading" constant="16" id="QQb-hx-97K"/>
+                                            <constraint firstItem="qce-fe-SY0" firstAttribute="top" secondItem="8yG-OA-TGl" secondAttribute="bottom" constant="8" id="Rst-P0-m8e"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Ih-2O-aXl" secondAttribute="trailing" constant="16" id="WaH-cX-Pah"/>
+                                            <constraint firstItem="8yG-OA-TGl" firstAttribute="top" secondItem="hGY-bf-Cjr" secondAttribute="top" constant="72" id="Xrz-HU-4up"/>
+                                            <constraint firstItem="9Ih-2O-aXl" firstAttribute="top" secondItem="PFe-FH-2a6" secondAttribute="bottom" constant="8" id="Z1r-bG-IQ8"/>
+                                            <constraint firstAttribute="bottom" secondItem="9Ih-2O-aXl" secondAttribute="bottom" constant="32" id="eoR-LK-AQm"/>
+                                            <constraint firstItem="PFe-FH-2a6" firstAttribute="leading" secondItem="hGY-bf-Cjr" secondAttribute="leading" constant="16" id="m2b-nf-7nS"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                                 <color key="value" name="aboutGradientTop"/>
@@ -66,6 +104,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="46M-TG-txs"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutStackView" destination="9Ih-2O-aXl" id="VR6-kW-cZE"/>
+                        <outlet property="appDescriptionLabel" destination="PFe-FH-2a6" id="Nh4-hk-5a1"/>
+                        <outlet property="appNameLabel" destination="qce-fe-SY0" id="aJa-oE-14T"/>
+                        <outlet property="iconImageView" destination="8yG-OA-TGl" id="Lg8-JW-x4h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wm-rA-Nk2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -49,7 +49,7 @@ extension AccountPresenter: AccountPresentationLogic {
     }
 }
 
-// MARK: - ViewModeBuilder
+// MARK: - View Model Generator
 extension AccountPresenter {
     static func makeMenuItemViewModel(menuItem: MenuItem) -> MenuItemViewModel {
         let title: String
