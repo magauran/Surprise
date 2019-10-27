@@ -8,18 +8,6 @@
 
 import UIKit
 
-struct AboutItemViewModel {
-    let itemTitle: String
-    let itemBody: String
-}
-
-struct AboutViewModel {
-    let appIcon: UIImage?
-    let appName: String
-    let appDescription: String
-    let aboutItems: [AboutItemViewModel]
-}
-
 protocol AboutDisplayLogic {
     func displayAboutInfo(viewModel: AboutViewModel)
 }
@@ -43,7 +31,11 @@ final class AboutViewController: UIViewController {
         self.iconImageView.image = viewModel.appIcon
         self.appNameLabel.text = viewModel.appName
         self.appDescriptionLabel.text = viewModel.appDescription
-        // TODO: stack view
+
+        self.aboutStackView.removeArrangedSubviews()
+        viewModel.aboutItems.forEach {
+            self.aboutStackView.addArrangedSubview(AboutItemView(viewModel: $0))
+        }
     }
 }
 

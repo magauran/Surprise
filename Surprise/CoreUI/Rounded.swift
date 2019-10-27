@@ -9,22 +9,18 @@
 import UIKit
 
 @propertyWrapper
-public struct Rounded<T: UIView> {
-    public var wrappedValue: T? {
-        didSet {
-            self.round(cornerRadius: self.cornerRadius)
-        }
+struct Rounded<T: UIView> {
+    var wrappedValue: T? {
+        didSet { self.round(self.cornerRadius) }
     }
 
     private var cornerRadius: CGFloat
 
-    public init(_ cornerRadius: CGFloat) {
+    init(_ cornerRadius: CGFloat) {
         self.cornerRadius = cornerRadius
-        self.wrappedValue = nil
-        self.round(cornerRadius: cornerRadius)
     }
 
-    func round(cornerRadius: CGFloat) {
+    private func round(_ cornerRadius: CGFloat) {
         self.wrappedValue?.layer.cornerRadius = cornerRadius
     }
 }

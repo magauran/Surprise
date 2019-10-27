@@ -24,30 +24,6 @@ class GradientView: UIView {
         }
     }
 
-    @IBInspectable var shadowColor: UIColor = .clear {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    @IBInspectable var shadowX: CGFloat = 0 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    @IBInspectable var shadowY: CGFloat = -3 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    @IBInspectable var shadowBlur: CGFloat = 3 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
     @IBInspectable var startPointX: CGFloat = 0 {
         didSet {
             setNeedsLayout()
@@ -88,10 +64,6 @@ class GradientView: UIView {
         self.gradientLayer.startPoint = CGPoint(x: startPointX, y: startPointY)
         self.gradientLayer.endPoint = CGPoint(x: endPointX, y: endPointY)
         self.layer.cornerRadius = cornerRadius
-        self.layer.shadowColor = shadowColor.cgColor
-        self.layer.shadowOffset = CGSize(width: shadowX, height: shadowY)
-        self.layer.shadowRadius = shadowBlur
-        self.layer.shadowOpacity = 1
 
     }
 

@@ -36,6 +36,9 @@
 		88A1FB882365D517005FA6CC /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB872365D517005FA6CC /* AboutPresenter.swift */; };
 		88A1FB8A2365D6DD005FA6CC /* UIApplication++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB892365D6DD005FA6CC /* UIApplication++.swift */; };
 		88A1FB8C236600BD005FA6CC /* Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB8B236600BD005FA6CC /* Rounded.swift */; };
+		88A1FB8F236620AE005FA6CC /* UIStackView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB8E236620AE005FA6CC /* UIStackView++.swift */; };
+		88A1FB9123662842005FA6CC /* AboutItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB9023662842005FA6CC /* AboutItemView.swift */; };
+		88A1FB932366285E005FA6CC /* AboutViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB922366285E005FA6CC /* AboutViewModels.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
 		88A60ACB23644AAE0013A254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */; };
@@ -102,6 +105,9 @@
 		88A1FB872365D517005FA6CC /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
 		88A1FB892365D6DD005FA6CC /* UIApplication++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication++.swift"; sourceTree = "<group>"; };
 		88A1FB8B236600BD005FA6CC /* Rounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rounded.swift; sourceTree = "<group>"; };
+		88A1FB8E236620AE005FA6CC /* UIStackView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView++.swift"; sourceTree = "<group>"; };
+		88A1FB9023662842005FA6CC /* AboutItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutItemView.swift; sourceTree = "<group>"; };
+		88A1FB922366285E005FA6CC /* AboutViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModels.swift; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Surprise Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC723644AAE0013A254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 				8811A7062364F4A00069E9A9 /* UIImage++.swift */,
 				8811A6FD23649EC60069E9A9 /* UIStoryboard++.swift */,
 				88A1FB892365D6DD005FA6CC /* UIApplication++.swift */,
+				88A1FB8E236620AE005FA6CC /* UIStackView++.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -176,6 +183,8 @@
 			children = (
 				8811A710236501280069E9A9 /* AboutAssembler.swift */,
 				8811A712236503360069E9A9 /* AboutViewController.swift */,
+				88A1FB922366285E005FA6CC /* AboutViewModels.swift */,
+				88A1FB9023662842005FA6CC /* AboutItemView.swift */,
 				88A1FB852365D4FD005FA6CC /* AboutInteractor.swift */,
 				88A1FB872365D517005FA6CC /* AboutPresenter.swift */,
 				8811A714236503FF0069E9A9 /* About.storyboard */,
@@ -597,11 +606,13 @@
 				8811A7022364D2A70069E9A9 /* AccountBottomView.swift in Sources */,
 				88A1FB842365CE1D005FA6CC /* GradientView.swift in Sources */,
 				8811A711236501280069E9A9 /* AboutAssembler.swift in Sources */,
+				88A1FB8F236620AE005FA6CC /* UIStackView++.swift in Sources */,
 				88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */,
 				8811A7002364AFFB0069E9A9 /* AccountViewModels.swift in Sources */,
 				8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */,
 				886A0330236533330066DC84 /* AccountAPI.swift in Sources */,
 				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,
+				88A1FB9123662842005FA6CC /* AboutItemView.swift in Sources */,
 				88A1FB882365D517005FA6CC /* AboutPresenter.swift in Sources */,
 				88A1FB8C236600BD005FA6CC /* Rounded.swift in Sources */,
 				88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */,
@@ -611,6 +622,7 @@
 				88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */,
 				8811A719236512DF0069E9A9 /* SettingsAssembler.swift in Sources */,
 				8811A721236517840069E9A9 /* AccountMenuItemCell.swift in Sources */,
+				88A1FB932366285E005FA6CC /* AboutViewModels.swift in Sources */,
 				8811A72323651A3F0069E9A9 /* NSObject++.swift in Sources */,
 				8811A71B2365130C0069E9A9 /* SettingsViewController.swift in Sources */,
 				88A1FB8A2365D6DD005FA6CC /* UIApplication++.swift in Sources */,
