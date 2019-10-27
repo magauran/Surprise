@@ -31,6 +31,7 @@
 		886A0330236533330066DC84 /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A032F236533330066DC84 /* AccountAPI.swift */; };
 		886A0332236533C50066DC84 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886A0331236533C50066DC84 /* Profile.swift */; };
 		88A1FB802365B1D3005FA6CC /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */; };
+		88A1FB842365CE1D005FA6CC /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1FB832365CE1D005FA6CC /* GradientView.swift */; };
 		88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60ABE23644AAD0013A254 /* AppDelegate.swift */; };
 		88A60AC823644AAE0013A254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC723644AAE0013A254 /* Assets.xcassets */; };
 		88A60ACB23644AAE0013A254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */; };
@@ -92,6 +93,7 @@
 		886A032F236533330066DC84 /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
 		886A0331236533C50066DC84 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		88A1FB7F2365B1D3005FA6CC /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
+		88A1FB832365CE1D005FA6CC /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		88A60ABB23644AAD0013A254 /* Surprise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surprise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A60ABE23644AAD0013A254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A60AC723644AAE0013A254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				88A60AF7236478620013A254 /* Modules */,
 				8811A72523651DEF0069E9A9 /* Services */,
 				88A60AC723644AAE0013A254 /* Assets.xcassets */,
+				88A1FB832365CE1D005FA6CC /* GradientView.swift */,
 				88A60AC923644AAE0013A254 /* LaunchScreen.storyboard */,
 				88A60ACC23644AAE0013A254 /* Info.plist */,
 			);
@@ -571,6 +574,7 @@
 				886A032E236532F70066DC84 /* AuthPlugin.swift in Sources */,
 				88A60AF4236474CB0013A254 /* AccountViewController.swift in Sources */,
 				8811A7022364D2A70069E9A9 /* AccountBottomView.swift in Sources */,
+				88A1FB842365CE1D005FA6CC /* GradientView.swift in Sources */,
 				8811A711236501280069E9A9 /* AboutAssembler.swift in Sources */,
 				88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */,
 				8811A7002364AFFB0069E9A9 /* AccountViewModels.swift in Sources */,
