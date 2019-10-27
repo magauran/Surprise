@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPStorkController
 import Swinject
 import SwinjectAutoregistration
 
@@ -35,6 +36,7 @@ final class AccountRouter {
     }
 }
 
+// MARK: - AccountRoutingLogic
 extension AccountRouter: AccountRoutingLogic {
     func open(url: URL?) {
         self.appRouter.open(url: url)
@@ -42,11 +44,33 @@ extension AccountRouter: AccountRoutingLogic {
 
     func showAboutScreen() {
         let aboutViewController = self.aboutAssembler.resolver ~> AboutViewController.self
+
+        let transitionDelegate = Self.makeTransitioningDelegate()
+        aboutViewController.transitioningDelegate = transitionDelegate
+        aboutViewController.modalPresentationStyle = .custom
+        aboutViewController.modalPresentationCapturesStatusBarAppearance = true
+
         self.transitionHandler.present(aboutViewController, animated: true, completion: nil)
     }
 
     func showSettingsScreen() {
         let settingsViewController = self.settingsAssembler.resolver ~> SettingsViewController.self
+
+        let transitionDelegate = Self.makeTransitioningDelegate()
+        settingsViewController.transitioningDelegate = transitionDelegate
+        settingsViewController.modalPresentationStyle = .custom
+        settingsViewController.modalPresentationCapturesStatusBarAppearance = true
+
         self.transitionHandler.present(settingsViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Factory
+extension AccountRouter {
+    static func makeTransitioningDelegate() -> SPStorkTransitioningDelegate {
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        transitionDelegate.indicatorMode = .alwaysLine
+        transitionDelegate.cornerRadius = 25
+        return transitionDelegate
     }
 }

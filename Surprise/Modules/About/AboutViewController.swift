@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SPStorkController
 
 protocol AboutDisplayLogic {
     func displayAboutInfo(viewModel: AboutViewModel)
@@ -43,5 +44,12 @@ final class AboutViewController: UIViewController {
 extension AboutViewController: AboutDisplayLogic {
     func displayAboutInfo(viewModel: AboutViewModel) {
         self.configure(with: viewModel)
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension AboutViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        SPStorkController.scrollViewDidScroll(scrollView)
     }
 }
