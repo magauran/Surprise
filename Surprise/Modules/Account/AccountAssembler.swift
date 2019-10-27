@@ -21,7 +21,7 @@ struct AccountAssembler {
 private struct AccountAssembly: Assembly {
     func assemble(container: Container) {
         container.register(AccountViewController.self) { _ in
-            UIStoryboard.main.instantiate()
+            UIStoryboard.account.instantiate()
         }.initCompleted {
             $1.interactor = $0 ~> AccountBusinessLogic.self
         }

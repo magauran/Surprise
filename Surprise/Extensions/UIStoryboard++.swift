@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIStoryboard {
-    static let main = UIStoryboard(name: "Main", bundle: nil)
+    static let account = UIStoryboard(name: "Account", bundle: nil)
     static let about = UIStoryboard(name: "About", bundle: nil)
     static let settings = UIStoryboard(name: "Settings", bundle: nil)
 }
