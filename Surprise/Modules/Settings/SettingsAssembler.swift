@@ -7,6 +7,7 @@
 //
 
 import Swinject
+import SwinjectAutoregistration
 
 struct SettingsAssembler {
     var resolver: Resolver { self.assembler.resolver }
@@ -21,6 +22,20 @@ private struct SettingsAssembly: Assembly {
     func assemble(container: Container) {
         container.register(SettingsViewController.self) { _ in
             UIStoryboard.settings.instantiate()
+        }.initCompleted {
+            $1.interactor = $0 ~> SettingsBusinessLogic.self
+        }
+
+        container.register(SettingsPresentationLogic.self) {
+            let view = $0 ~> SettingsViewController.self
+            let presenter = SettingsPresenter(view: view)
+            return presenter
+        }
+
+        container.register(SettingsBusinessLogic.self) {
+            let presenter = $0 ~> SettingsPresentationLogic.self
+            let interactor = SettingsInteractor(presenter: presenter)
+            return interactor
         }
     }
 }

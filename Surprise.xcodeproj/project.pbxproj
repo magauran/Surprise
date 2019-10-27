@@ -49,6 +49,8 @@
 		88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF5236478530013A254 /* AccountInteractor.swift */; };
 		88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AF9236478880013A254 /* AccountPresenter.swift */; };
 		88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A60AFB23647C500013A254 /* AppAssembler.swift */; };
+		88D07C57236642A90096D2BE /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C56236642A90096D2BE /* SettingsInteractor.swift */; };
+		88D07C592366440A0096D2BE /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C582366440A0096D2BE /* SettingsPresenter.swift */; };
 		CB8BCE807F0CA91A04B3AFD1 /* Pods_SurpriseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07004C838422C47B12E17340 /* Pods_SurpriseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +126,8 @@
 		88A60AF5236478530013A254 /* AccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
 		88A60AF9236478880013A254 /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
 		88A60AFB23647C500013A254 /* AppAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembler.swift; sourceTree = "<group>"; };
+		88D07C56236642A90096D2BE /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		88D07C582366440A0096D2BE /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		D020D10873280F0D6F8DA671 /* Pods-SurpriseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurpriseTests.release.xcconfig"; path = "Target Support Files/Pods-SurpriseTests/Pods-SurpriseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +201,8 @@
 			children = (
 				8811A718236512DF0069E9A9 /* SettingsAssembler.swift */,
 				8811A71A2365130C0069E9A9 /* SettingsViewController.swift */,
+				88D07C56236642A90096D2BE /* SettingsInteractor.swift */,
+				88D07C582366440A0096D2BE /* SettingsPresenter.swift */,
 				8811A71C2365132E0069E9A9 /* Settings.storyboard */,
 			);
 			path = Settings;
@@ -609,6 +615,7 @@
 				88A1FB842365CE1D005FA6CC /* GradientView.swift in Sources */,
 				8811A711236501280069E9A9 /* AboutAssembler.swift in Sources */,
 				88A1FB8F236620AE005FA6CC /* UIStackView++.swift in Sources */,
+				88D07C57236642A90096D2BE /* SettingsInteractor.swift in Sources */,
 				88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */,
 				8811A7002364AFFB0069E9A9 /* AccountViewModels.swift in Sources */,
 				8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */,
@@ -628,6 +635,7 @@
 				8811A72323651A3F0069E9A9 /* NSObject++.swift in Sources */,
 				8811A71B2365130C0069E9A9 /* SettingsViewController.swift in Sources */,
 				88A1FB8A2365D6DD005FA6CC /* UIApplication++.swift in Sources */,
+				88D07C592366440A0096D2BE /* SettingsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
