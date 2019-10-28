@@ -23,12 +23,14 @@ final class AccountViewController: UIViewController {
     @IBOutlet private var headerView: AccountHeaderView! // TODO: clean storyboard defaults
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var footerView: AccountBottomView!
+    private let chatButton = UIButton()
 
     private var menuSections: MenuViewModel = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView()
+        self.setupChatButton()
         self.interactor.fetchMenuItems()
         self.interactor.fetchUserInfo()
     }
@@ -36,6 +38,36 @@ final class AccountViewController: UIViewController {
     private func setupTableView() {
         self.tableView.setAndLayoutTableHeaderView(header: self.headerView)
         self.tableView.setAndLayoutTableFooterView(footer: self.footerView)
+    }
+
+    private func setupChatButton() {
+        self.chatButton.setImage(UIImage(named: "chat"), for: .normal)
+        self.chatButton.tintColor = UIColor(named: "chatButton")
+        self.chatButton.addTarget(self, action: #selector(self.didTapChatButton), for: .touchUpInside)
+        self.chatButton.imageEdgeInsets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+        self.chatButton.layer.cornerRadius = 30
+        self.chatButton.layer.masksToBounds = false
+        self.chatButton.backgroundColor = .white
+        self.chatButton.layer.shadowColor = UIColor.lightGray.cgColor
+        self.chatButton.layer.shadowRadius = 2
+        self.chatButton.layer.shadowOpacity = 0.3
+        self.chatButton.layer.shadowOffset = .zero
+        self.chatButton.translatesAutoresizingMaskIntoConstraints = false
+
+        self.view.addSubview(self.chatButton)
+
+        NSLayoutConstraint.activate([
+            self.chatButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16),
+            self.chatButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
+                                                    constant: 24),
+            self.chatButton.heightAnchor.constraint(equalToConstant: 60),
+            self.chatButton.widthAnchor.constraint(equalToConstant: 60),
+        ])
+    }
+
+    @objc
+    private func didTapChatButton() {
+
     }
 }
 
