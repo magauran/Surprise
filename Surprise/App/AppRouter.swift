@@ -11,7 +11,7 @@ import UIKit
 final class AppRouter {
     func open(url: URL?) {
         guard let url = url, UIApplication.shared.canOpenURL(url) else {
-            return assertionFailure("AppStore is not available on the simulator. Run on a real device.")
+            return assertionFailure("AppStore and Mail is not available on the simulator. Run on a device.")
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }

@@ -15,6 +15,7 @@ protocol AccountRoutingLogic {
     func open(url: URL?)
     func showAboutScreen()
     func showSettingsScreen(onClose: @escaping () -> Void)
+    func openMailApp()
 }
 
 final class AccountRouter {
@@ -63,6 +64,11 @@ extension AccountRouter: AccountRoutingLogic {
         settingsViewController.modalPresentationCapturesStatusBarAppearance = true
 
         self.transitionHandler?.present(settingsViewController, animated: true, completion: nil)
+    }
+
+    func openMailApp() {
+        let mailURL = URL(string: "mailto:alexey@salangin.ru")
+        self.appRouter.open(url: mailURL)
     }
 }
 

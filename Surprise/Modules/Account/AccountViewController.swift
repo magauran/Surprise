@@ -59,7 +59,7 @@ final class AccountViewController: UIViewController {
         NSLayoutConstraint.activate([
             self.chatButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -16),
             self.chatButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor,
-                                                    constant: 24),
+                                                    constant: -24),
             self.chatButton.heightAnchor.constraint(equalToConstant: 60),
             self.chatButton.widthAnchor.constraint(equalToConstant: 60),
         ])
@@ -67,7 +67,7 @@ final class AccountViewController: UIViewController {
 
     @objc
     private func didTapChatButton() {
-
+        self.router.openMailApp()
     }
 }
 
