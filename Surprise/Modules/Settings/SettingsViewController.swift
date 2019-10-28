@@ -12,6 +12,7 @@ import SPStorkController
 protocol SettingsDisplayLogic {
     func updateLanguageButton(language: TourLanguage)
     func updateGeolocationSwitch(isOn: Bool)
+    func updateAccount(viewModel: SettingsAccountSectionViewModel)
 }
 
 final class SettingsViewController: UIViewController {
@@ -56,6 +57,11 @@ extension SettingsViewController: SettingsDisplayLogic {
 
     func updateGeolocationSwitch(isOn: Bool) {
         self.locationSwitch.isOn = isOn
+    }
+
+    func updateAccount(viewModel: SettingsAccountSectionViewModel) {
+        self.nameTextField.text = viewModel.name
+        self.emailLabel.text = viewModel.email
     }
 }
 

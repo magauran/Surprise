@@ -62,11 +62,5 @@ private struct AccountAssembly: Assembly {
             presenter.router = $0 ~> AccountRoutingLogic.self
             return presenter
         }
-
-        container.register(AccountService.self) {
-            let tokenSource = $0 ~> TokenSource.self
-            let service = AccountServiceImpl(tokenSource: tokenSource)
-            return service
-        }
     }
 }

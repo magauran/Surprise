@@ -12,6 +12,7 @@ protocol SettingsPresentationLogic {
     func presentSettings(language: TourLanguage)
     func updateGeolocationStatus(isEnabled: Bool)
     func openGeoSettings()
+    func updateAccountInfo(_ profile: Profile)
 }
 
 final class SettingsPresenter {
@@ -36,5 +37,17 @@ extension SettingsPresenter: SettingsPresentationLogic {
 
     func openGeoSettings() {
         self.router.showAlertAndOpenSettings()
+    }
+
+    func updateAccountInfo(_ profile: Profile) {
+        let viewModel = Self.makeSettingsAccountSectionViewModel(profile: profile)
+        self.view.updateAccount(viewModel: viewModel)
+    }
+}
+
+// MARK: - ViewModelGenerator
+extension SettingsPresenter {
+    static func makeSettingsAccountSectionViewModel(profile: Profile) -> SettingsAccountSectionViewModel {
+        return SettingsAccountSectionViewModel(name: profile.firstName, email: profile.email)
     }
 }

@@ -64,5 +64,11 @@ private struct AppAssembly: Assembly {
         container.register(GeolocationSource.self) {
             return $0 ~> AppConfig.self
         }
+
+        container.register(AccountService.self) {
+            let tokenSource = $0 ~> TokenSource.self
+            let service = AccountServiceImpl(tokenSource: tokenSource)
+            return service
+        }
     }
 }

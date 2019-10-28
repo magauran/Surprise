@@ -38,11 +38,13 @@ private struct SettingsAssembly: Assembly {
             let languageSource = $0 ~> LanguageSource.self
             let geolocationSource = $0 ~> GeolocationSource.self
             let geolocationService = GeolocationServiceImpl()
+            let accountService = $0 ~> AccountService.self
             let interactor = SettingsInteractor(
                 presenter: presenter,
                 languageSource: languageSource,
                 geolocationSource: geolocationSource,
-                geolocationService: geolocationService
+                geolocationService: geolocationService,
+                accountService: accountService
             )
             return interactor
         }

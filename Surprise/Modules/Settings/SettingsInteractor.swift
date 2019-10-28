@@ -24,17 +24,20 @@ final class SettingsInteractor {
     private let languageSource: LanguageSource
     private let geolocationSource: GeolocationSource
     private let geolocationService: GeolocationService
+    private let accountService: AccountService
 
     init(
         presenter: SettingsPresentationLogic,
         languageSource: LanguageSource,
         geolocationSource: GeolocationSource,
-        geolocationService: GeolocationService
+        geolocationService: GeolocationService,
+        accountService: AccountService
     ) {
         self.presenter = presenter
         self.languageSource = languageSource
         self.geolocationSource = geolocationSource
         self.geolocationService = geolocationService
+        self.accountService = accountService
     }
 }
 
@@ -47,6 +50,8 @@ extension SettingsInteractor: SettingsBusinessLogic {
 
         let geolocationEnabled = self.geolocationSource.isGeolocationEnabled
         self.presenter.updateGeolocationStatus(isEnabled: geolocationEnabled)
+
+        self.fetchAccountInfo()
     }
 
     func didSelectLanguage(_ language: TourLanguage) {
@@ -74,5 +79,19 @@ extension SettingsInteractor: SettingsBusinessLogic {
     private func updateGeolocationStatus(isEnabled: Bool) {
         self.geolocationSource.isGeolocationEnabled = isEnabled
         self.presenter.updateGeolocationStatus(isEnabled: isEnabled)
+    }
+
+    private func fetchAccountInfo() {
+        self.accountService.fetchAccount { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let profile):
+                DispatchQueue.main.async {
+                    self.presenter.updateAccountInfo(profile)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
