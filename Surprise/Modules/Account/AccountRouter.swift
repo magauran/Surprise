@@ -14,7 +14,7 @@ import SwinjectAutoregistration
 protocol AccountRoutingLogic {
     func open(url: URL?)
     func showAboutScreen()
-    func showSettingsScreen()
+    func showSettingsScreen(onClose: @escaping () -> Void)
 }
 
 final class AccountRouter {
@@ -53,8 +53,9 @@ extension AccountRouter: AccountRoutingLogic {
         self.transitionHandler?.present(aboutViewController, animated: true, completion: nil)
     }
 
-    func showSettingsScreen() {
+    func showSettingsScreen(onClose: @escaping () -> Void) {
         let settingsViewController = self.settingsAssembler.resolver ~> SettingsViewController.self
+        settingsViewController.onClose = onClose
 
         let transitionDelegate = Self.makeTransitioningDelegate()
         settingsViewController.transitioningDelegate = transitionDelegate

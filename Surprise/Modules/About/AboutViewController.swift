@@ -9,7 +9,7 @@
 import UIKit
 import SPStorkController
 
-protocol AboutDisplayLogic {
+protocol AboutDisplayLogic: AnyObject {
     func displayAboutInfo(viewModel: AboutViewModel)
 }
 

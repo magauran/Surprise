@@ -13,7 +13,7 @@ protocol AboutPresentationLogic {
 }
 
 final class AboutPresenter {
-    private let view: AboutDisplayLogic
+    private weak var view: AboutDisplayLogic?
 
     init(view: AboutDisplayLogic) {
         self.view = view
@@ -23,7 +23,7 @@ final class AboutPresenter {
 extension AboutPresenter: AboutPresentationLogic {
     func presentAboutInfo() {
         let viewModel = Self.makeViewModel()
-        self.view.displayAboutInfo(viewModel: viewModel)
+        self.view?.displayAboutInfo(viewModel: viewModel)
     }
 }
 

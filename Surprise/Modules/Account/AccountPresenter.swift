@@ -19,7 +19,6 @@ protocol AccountPresentationLogic {
 
 final class AccountPresenter {
     weak var viewController: AccountDispayLogic?
-    var router: AccountRoutingLogic?
 }
 
 // MARK: - AccountPresentationLogic
@@ -37,15 +36,15 @@ extension AccountPresenter: AccountPresentationLogic {
     }
 
     func showAboutScreen() {
-        self.router?.showAboutScreen()
+        self.viewController?.showAboutScreen()
     }
 
     func showSettingsScreen() {
-        self.router?.showSettingsScreen()
+        self.viewController?.showSettingsScreen()
     }
 
     func open(url: URL?) {
-        self.router?.open(url: url)
+        self.viewController?.open(url: url)
     }
 }
 

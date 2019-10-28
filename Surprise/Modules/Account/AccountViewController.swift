@@ -11,10 +11,14 @@ import UIKit
 protocol AccountDispayLogic: UIViewController {
     func displayMenu(viewModel: MenuViewModel)
     func displayHeader(viewModel: AccountHeaderViewModel)
+    func showAboutScreen()
+    func showSettingsScreen()
+    func open(url: URL?)
 }
 
 final class AccountViewController: UIViewController {
     var interactor: AccountBusinessLogic!
+    var router: AccountRoutingLogic!
 
     @IBOutlet private var headerView: AccountHeaderView! // TODO: clean storyboard defaults
     @IBOutlet private var tableView: UITableView!
@@ -44,6 +48,20 @@ extension AccountViewController: AccountDispayLogic {
 
     func displayHeader(viewModel: AccountHeaderViewModel) {
         self.headerView.configure(with: viewModel)
+    }
+
+    func showAboutScreen() {
+        self.router.showAboutScreen()
+    }
+
+    func showSettingsScreen() {
+        self.router.showSettingsScreen {
+            self.interactor.fetchUserInfo()
+        }
+    }
+
+    func open(url: URL?) {
+        self.router.open(url: url)
     }
 }
 

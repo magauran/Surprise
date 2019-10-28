@@ -24,6 +24,7 @@ private struct AccountAssembly: Assembly {
             UIStoryboard.account.instantiate()
         }.initCompleted {
             $1.interactor = $0 ~> AccountBusinessLogic.self
+            $1.router = $0 ~> AccountRoutingLogic.self
         }
 
         container.register(AccountBusinessLogic.self) {
@@ -59,7 +60,6 @@ private struct AccountAssembly: Assembly {
         container.register(AccountPresentationLogic.self) {
             let presenter = AccountPresenter()
             presenter.viewController = $0 ~> AccountViewController.self
-            presenter.router = $0 ~> AccountRoutingLogic.self
             return presenter
         }
     }

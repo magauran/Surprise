@@ -9,7 +9,7 @@
 import UIKit
 import SPStorkController
 
-protocol SettingsDisplayLogic {
+protocol SettingsDisplayLogic: AnyObject {
     func updateLanguageButton(language: TourLanguage)
     func updateGeolocationSwitch(isOn: Bool)
     func updateAccount(viewModel: SettingsAccountSectionViewModel)
@@ -21,6 +21,8 @@ final class SettingsViewController: UIViewController {
     var interactor: SettingsBusinessLogic!
     var router: SettingsRoutingLogic!
 
+    var onClose: (() -> Void)?
+
     @IBOutlet @Rounded(20) private var englishButton: UIButton!
     @IBOutlet @Rounded(20) private var russianButton: UIButton!
     @IBOutlet private var locationSwitch: UISwitch!
@@ -30,6 +32,11 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.interactor.fetchSettingsState()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.onClose?()
     }
 
     @IBAction private func didTapEnglishButton() {

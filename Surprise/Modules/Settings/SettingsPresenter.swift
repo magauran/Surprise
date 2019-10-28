@@ -17,7 +17,7 @@ protocol SettingsPresentationLogic {
 }
 
 final class SettingsPresenter {
-    private let view: SettingsDisplayLogic
+    private weak var view: SettingsDisplayLogic?
 
     init(view: SettingsDisplayLogic) {
         self.view = view
@@ -27,24 +27,24 @@ final class SettingsPresenter {
 // MARK: - SettingsPresentationLogic
 extension SettingsPresenter: SettingsPresentationLogic {
     func presentSettings(language: TourLanguage) {
-        self.view.updateLanguageButton(language: language)
+        self.view?.updateLanguageButton(language: language)
     }
 
     func updateGeolocationStatus(isEnabled: Bool) {
-        self.view.updateGeolocationSwitch(isOn: isEnabled)
+        self.view?.updateGeolocationSwitch(isOn: isEnabled)
     }
 
     func openGeoSettings() {
-        self.view.showAlertAndOpenSettings()
+        self.view?.showAlertAndOpenSettings()
     }
 
     func updateAccountInfo(_ profile: Profile) {
         let viewModel = Self.makeSettingsAccountSectionViewModel(profile: profile)
-        self.view.updateAccount(viewModel: viewModel)
+        self.view?.updateAccount(viewModel: viewModel)
     }
 
     func presentChangeNameAlert(currentName: String) {
-        self.view.displayChangeNameAlert()
+        self.view?.displayChangeNameAlert()
     }
 }
 
