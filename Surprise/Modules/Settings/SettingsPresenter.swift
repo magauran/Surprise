@@ -13,15 +13,14 @@ protocol SettingsPresentationLogic {
     func updateGeolocationStatus(isEnabled: Bool)
     func openGeoSettings()
     func updateAccountInfo(_ profile: Profile)
+    func presentChangeNameAlert(currentName: String)
 }
 
 final class SettingsPresenter {
     private let view: SettingsDisplayLogic
-    private let router: SettingsRoutingLogic
 
-    init(view: SettingsDisplayLogic, router: SettingsRoutingLogic) {
+    init(view: SettingsDisplayLogic) {
         self.view = view
-        self.router = router
     }
 }
 
@@ -36,12 +35,16 @@ extension SettingsPresenter: SettingsPresentationLogic {
     }
 
     func openGeoSettings() {
-        self.router.showAlertAndOpenSettings()
+        self.view.showAlertAndOpenSettings()
     }
 
     func updateAccountInfo(_ profile: Profile) {
         let viewModel = Self.makeSettingsAccountSectionViewModel(profile: profile)
         self.view.updateAccount(viewModel: viewModel)
+    }
+
+    func presentChangeNameAlert(currentName: String) {
+        self.view.displayChangeNameAlert()
     }
 }
 

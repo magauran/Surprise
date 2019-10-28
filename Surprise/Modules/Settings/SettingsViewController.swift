@@ -13,15 +13,18 @@ protocol SettingsDisplayLogic {
     func updateLanguageButton(language: TourLanguage)
     func updateGeolocationSwitch(isOn: Bool)
     func updateAccount(viewModel: SettingsAccountSectionViewModel)
+    func displayChangeNameAlert()
+    func showAlertAndOpenSettings()
 }
 
 final class SettingsViewController: UIViewController {
     var interactor: SettingsBusinessLogic!
+    var router: SettingsRoutingLogic!
 
     @IBOutlet @Rounded(20) private var englishButton: UIButton!
     @IBOutlet @Rounded(20) private var russianButton: UIButton!
     @IBOutlet private var locationSwitch: UISwitch!
-    @IBOutlet private var nameTextField: UITextField!
+    @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var emailLabel: UILabel!
 
     override func viewDidLoad() {
@@ -39,6 +42,10 @@ final class SettingsViewController: UIViewController {
 
     @IBAction private func switchLocation(_ sender: UISwitch) {
         self.interactor.didChangeGeolocationState(sender.isOn)
+    }
+
+    @IBAction private func didTapChangeNameButton() {
+        self.interactor.requestChangeName(currentName: self.nameLabel.text ?? "")
     }
 }
 
@@ -60,8 +67,20 @@ extension SettingsViewController: SettingsDisplayLogic {
     }
 
     func updateAccount(viewModel: SettingsAccountSectionViewModel) {
-        self.nameTextField.text = viewModel.name
+        self.nameLabel.text = viewModel.name
         self.emailLabel.text = viewModel.email
+    }
+
+    func displayChangeNameAlert() {
+        self.router.showChangeNameAlert { newName in
+            if let newName = newName {
+                self.interactor.changeAccountName(newName: newName)
+            }
+        }
+    }
+
+    func showAlertAndOpenSettings() {
+        self.router.showAlertAndOpenSettings()
     }
 }
 

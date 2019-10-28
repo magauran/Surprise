@@ -24,12 +24,12 @@ private struct SettingsAssembly: Assembly {
             UIStoryboard.settings.instantiate()
         }.initCompleted {
             $1.interactor = $0 ~> SettingsBusinessLogic.self
+            $1.router = $0 ~> SettingsRoutingLogic.self
         }
 
         container.register(SettingsPresentationLogic.self) {
             let view = $0 ~> SettingsViewController.self
-            let router = $0 ~> SettingsRoutingLogic.self
-            let presenter = SettingsPresenter(view: view, router: router)
+            let presenter = SettingsPresenter(view: view)
             return presenter
         }
 

@@ -10,6 +10,7 @@ import UIKit
 
 protocol SettingsRoutingLogic {
     func showAlertAndOpenSettings()
+    func showChangeNameAlert(then handler: @escaping (String?) -> Void)
 }
 
 final class SettingsRouter {
@@ -35,6 +36,27 @@ extension SettingsRouter: SettingsRoutingLogic {
         alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in
 
         }))
+
+        self.transitionHandler?.present(alertController, animated: true, completion: nil)
+    }
+
+    func showChangeNameAlert(then handler: @escaping (String?) -> Void) {
+        let alertController = UIAlertController(
+            title: "Change name",
+            message: "Input new account name",
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "Change", style: .default, handler: { _ in
+            handler(alertController.textFields?.first?.text)
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { _ in
+            handler(nil)
+        }))
+
+        alertController.addTextField { textField in
+            textField.text = "Vasya"
+        }
 
         self.transitionHandler?.present(alertController, animated: true, completion: nil)
     }

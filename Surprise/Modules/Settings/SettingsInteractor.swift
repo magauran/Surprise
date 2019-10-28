@@ -12,6 +12,8 @@ protocol SettingsBusinessLogic {
     func fetchSettingsState()
     func didSelectLanguage(_ language: TourLanguage)
     func didChangeGeolocationState(_ isEnabled: Bool)
+    func requestChangeName(currentName: String)
+    func changeAccountName(newName: String)
 }
 
 enum TourLanguage: String {
@@ -76,6 +78,16 @@ extension SettingsInteractor: SettingsBusinessLogic {
         }
     }
 
+    func requestChangeName(currentName: String) {
+        self.presenter.presentChangeNameAlert(currentName: "")
+    }
+
+    func changeAccountName(newName: String) {
+
+    }
+}
+
+extension SettingsInteractor {
     private func updateGeolocationStatus(isEnabled: Bool) {
         self.geolocationSource.isGeolocationEnabled = isEnabled
         self.presenter.updateGeolocationStatus(isEnabled: isEnabled)
