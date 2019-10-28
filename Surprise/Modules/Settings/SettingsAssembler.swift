@@ -28,15 +28,23 @@ private struct SettingsAssembly: Assembly {
 
         container.register(SettingsPresentationLogic.self) {
             let view = $0 ~> SettingsViewController.self
-            let presenter = SettingsPresenter(view: view)
+            let router = $0 ~> SettingsRoutingLogic.self
+            let presenter = SettingsPresenter(view: view, router: router)
             return presenter
         }
 
         container.register(SettingsBusinessLogic.self) {
             let presenter = $0 ~> SettingsPresentationLogic.self
             let languageSource = $0 ~> LanguageSource.self
-            let interactor = SettingsInteractor(presenter: presenter, languageSource: languageSource)
+            let interactor = SettingsInteractor(presenter: presenter, languageSource: languageSource, geolocationSource: AppConfig()) // TODO
             return interactor
+        }
+
+        container.register(SettingsRoutingLogic.self) {
+            let view = $0 ~> SettingsViewController.self
+            let appRouter = $0 ~> AppRouter.self
+            let router = SettingsRouter(transitionHandler: view, appRouter: appRouter)
+            return router
         }
     }
 }

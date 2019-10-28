@@ -12,13 +12,21 @@ protocol LanguageSource: AnyObject {
     var currentLanguage: String { get set }
 }
 
-final class AppConfig: LanguageSource {
+protocol GeolocationSource: AnyObject {
+    var isGeolocationEnabled: Bool { get set }
+}
+
+final class AppConfig: LanguageSource, GeolocationSource {
     // swiftlint:disable:next force_unwrapping
     static let baseURL = URL(string: "https://app.surprizeme.ru/api/")!
 
     // MARK: - LanguageSource
     @UserDefault("current_language", defaultValue: "en_US")
     var currentLanguage: String
+
+    // MARK: - GeolocationSource
+    @UserDefault("geolocation", defaultValue: false)
+    var isGeolocationEnabled: Bool
 }
 
 extension AppConfig: TokenSource {

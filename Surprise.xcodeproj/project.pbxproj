@@ -52,6 +52,8 @@
 		88D07C57236642A90096D2BE /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C56236642A90096D2BE /* SettingsInteractor.swift */; };
 		88D07C592366440A0096D2BE /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C582366440A0096D2BE /* SettingsPresenter.swift */; };
 		88D07C5C236648420096D2BE /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C5B236648420096D2BE /* UserDefault.swift */; };
+		88D07C5E2366530F0096D2BE /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C5D2366530F0096D2BE /* GeolocationService.swift */; };
+		88D07C6023665C780096D2BE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C5F23665C780096D2BE /* SettingsRouter.swift */; };
 		CB8BCE807F0CA91A04B3AFD1 /* Pods_SurpriseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07004C838422C47B12E17340 /* Pods_SurpriseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,8 @@
 		88D07C56236642A90096D2BE /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		88D07C582366440A0096D2BE /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		88D07C5B236648420096D2BE /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		88D07C5D2366530F0096D2BE /* GeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
+		88D07C5F23665C780096D2BE /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		D020D10873280F0D6F8DA671 /* Pods-SurpriseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurpriseTests.release.xcconfig"; path = "Target Support Files/Pods-SurpriseTests/Pods-SurpriseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -205,6 +209,7 @@
 				8811A71A2365130C0069E9A9 /* SettingsViewController.swift */,
 				88D07C56236642A90096D2BE /* SettingsInteractor.swift */,
 				88D07C582366440A0096D2BE /* SettingsPresenter.swift */,
+				88D07C5F23665C780096D2BE /* SettingsRouter.swift */,
 				8811A71C2365132E0069E9A9 /* Settings.storyboard */,
 			);
 			path = Settings;
@@ -225,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				8811A726236523590069E9A9 /* AccountService.swift */,
+				88D07C5D2366530F0096D2BE /* GeolocationService.swift */,
 				886A032F236533330066DC84 /* AccountAPI.swift */,
 				886A032D236532F70066DC84 /* AuthPlugin.swift */,
 			);
@@ -633,6 +639,7 @@
 				886A0330236533330066DC84 /* AccountAPI.swift in Sources */,
 				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,
 				88A1FB9123662842005FA6CC /* AboutItemView.swift in Sources */,
+				88D07C6023665C780096D2BE /* SettingsRouter.swift in Sources */,
 				88A1FB882365D517005FA6CC /* AboutPresenter.swift in Sources */,
 				88A1FB8C236600BD005FA6CC /* Rounded.swift in Sources */,
 				88A60AFC23647C500013A254 /* AppAssembler.swift in Sources */,
@@ -640,6 +647,7 @@
 				88A1FB802365B1D3005FA6CC /* AccountHeaderView.swift in Sources */,
 				8811A713236503360069E9A9 /* AboutViewController.swift in Sources */,
 				88A60ABF23644AAD0013A254 /* AppDelegate.swift in Sources */,
+				88D07C5E2366530F0096D2BE /* GeolocationService.swift in Sources */,
 				8811A719236512DF0069E9A9 /* SettingsAssembler.swift in Sources */,
 				8811A721236517840069E9A9 /* AccountMenuItemCell.swift in Sources */,
 				88A1FB932366285E005FA6CC /* AboutViewModels.swift in Sources */,

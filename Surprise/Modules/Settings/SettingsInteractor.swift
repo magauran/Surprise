@@ -11,6 +11,7 @@ import Foundation
 protocol SettingsBusinessLogic {
     func fetchSettingsState()
     func didSelectLanguage(_ language: TourLanguage)
+    func didChangeGeolocationState(_ isEnabled: Bool)
 }
 
 enum TourLanguage: String {
@@ -21,10 +22,17 @@ enum TourLanguage: String {
 final class SettingsInteractor {
     private let presenter: SettingsPresentationLogic
     private let languageSource: LanguageSource
+    private let geolocationSource: GeolocationSource
+    private let geolocationService: GeolocationService = GeolocationServiceImpl()
 
-    init(presenter: SettingsPresentationLogic, languageSource: LanguageSource) {
+    init(
+        presenter: SettingsPresentationLogic,
+        languageSource: LanguageSource,
+        geolocationSource: GeolocationSource
+    ) {
         self.presenter = presenter
         self.languageSource = languageSource
+        self.geolocationSource = geolocationSource
     }
 }
 
@@ -39,5 +47,26 @@ extension SettingsInteractor: SettingsBusinessLogic {
     func didSelectLanguage(_ language: TourLanguage) {
         self.languageSource.currentLanguage = language.rawValue
         self.presenter.presentSettings(language: language)
+    }
+
+    func didChangeGeolocationState(_ isEnabled: Bool) {
+        guard !self.geolocationService.isDenied else {
+            self.presenter.openGeoSettings()
+            self.presenter.updateGeolocationStatus(isEnabled: false)
+            return
+        }
+
+        if isEnabled {
+            let geolocationEnabled = self.geolocationService.requestPermission()
+            if geolocationEnabled {
+                self.geolocationSource.isGeolocationEnabled = true
+                self.presenter.updateGeolocationStatus(isEnabled: true)
+            } else {
+                self.presenter.updateGeolocationStatus(isEnabled: false)
+            }
+        } else {
+            self.geolocationSource.isGeolocationEnabled = false
+            self.presenter.updateGeolocationStatus(isEnabled: false)
+        }
     }
 }

@@ -18,7 +18,7 @@ protocol AccountRoutingLogic {
 }
 
 final class AccountRouter {
-    private let transitionHandler: UIViewController
+    private weak var transitionHandler: UIViewController?
     private let appRouter: AppRouter
     private let aboutAssembler: Assembler
     private let settingsAssembler: Assembler
@@ -50,7 +50,7 @@ extension AccountRouter: AccountRoutingLogic {
         aboutViewController.modalPresentationStyle = .custom
         aboutViewController.modalPresentationCapturesStatusBarAppearance = true
 
-        self.transitionHandler.present(aboutViewController, animated: true, completion: nil)
+        self.transitionHandler?.present(aboutViewController, animated: true, completion: nil)
     }
 
     func showSettingsScreen() {
@@ -61,7 +61,7 @@ extension AccountRouter: AccountRoutingLogic {
         settingsViewController.modalPresentationStyle = .custom
         settingsViewController.modalPresentationCapturesStatusBarAppearance = true
 
-        self.transitionHandler.present(settingsViewController, animated: true, completion: nil)
+        self.transitionHandler?.present(settingsViewController, animated: true, completion: nil)
     }
 }
 

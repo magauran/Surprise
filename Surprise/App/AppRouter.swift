@@ -15,4 +15,11 @@ final class AppRouter {
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
+
+    func openSettings() {
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+            return assertionFailure()
+        }
+        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+    }
 }

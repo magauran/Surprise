@@ -191,10 +191,13 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-m4-O1z">
+                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-m4-O1z">
                                                                     <rect key="frame" x="333" y="0.0" width="51" height="27"/>
                                                                     <color key="onTintColor" name="onTint"/>
                                                                     <color key="thumbTintColor" name="base"/>
+                                                                    <connections>
+                                                                        <action selector="switchSomething:" destination="kWk-07-aNc" eventType="valueChanged" id="KhG-Cc-aCP"/>
+                                                                    </connections>
                                                                 </switch>
                                                             </subviews>
                                                         </stackView>
@@ -246,7 +249,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p39-xH-CGV">
+                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="p39-xH-CGV">
                                                                     <rect key="frame" x="333" y="0.0" width="51" height="27"/>
                                                                     <color key="onTintColor" name="onTint"/>
                                                                     <color key="thumbTintColor" name="base"/>

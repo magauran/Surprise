@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SPStorkController
 
 protocol SettingsDisplayLogic {
     func updateLanguageButton(language: TourLanguage)
+    func updateGeolocationSwitch(isOn: Bool)
 }
 
 final class SettingsViewController: UITableViewController {
@@ -34,6 +36,10 @@ final class SettingsViewController: UITableViewController {
     @IBAction private func didTapRussianButton() {
         self.interactor.didSelectLanguage(.russian)
     }
+
+    @IBAction private func switchSomething(_ sender: UISwitch) {
+        self.interactor.didChangeGeolocationState(sender.isOn)
+    }
 }
 
 // MARK: - SettingsDisplayLogic
@@ -47,6 +53,10 @@ extension SettingsViewController: SettingsDisplayLogic {
             self.englishButton.backgroundColor = Style.normalLanguageButtonColor
             self.russianButton.backgroundColor = Style.selectedLanguageButtonColor
         }
+    }
+
+    func updateGeolocationSwitch(isOn: Bool) {
+        self.switch1.isOn = isOn
     }
 }
 
@@ -65,6 +75,10 @@ extension SettingsViewController {
         headerView.textLabel?.font = .systemFont(ofSize: 18, weight: .heavy)
         headerView.textLabel?.text = headerView.textLabel?.text?.lowercased().capitalized
         headerView.textLabel?.textColor = .black
+    }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        SPStorkController.scrollViewDidScroll(scrollView)
     }
 }
 
