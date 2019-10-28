@@ -14,13 +14,12 @@ protocol SettingsDisplayLogic {
     func updateGeolocationSwitch(isOn: Bool)
 }
 
-final class SettingsViewController: UITableViewController {
+final class SettingsViewController: UIViewController {
     var interactor: SettingsBusinessLogic!
 
     @IBOutlet @Rounded(20) private var englishButton: UIButton!
     @IBOutlet @Rounded(20) private var russianButton: UIButton!
-    @IBOutlet private var switch1: UISwitch!
-    @IBOutlet private var switch2: UISwitch!
+    @IBOutlet private var locationSwitch: UISwitch!
     @IBOutlet private var nameTextField: UITextField!
     @IBOutlet private var emailLabel: UILabel!
 
@@ -37,7 +36,7 @@ final class SettingsViewController: UITableViewController {
         self.interactor.didSelectLanguage(.russian)
     }
 
-    @IBAction private func switchSomething(_ sender: UISwitch) {
+    @IBAction private func switchLocation(_ sender: UISwitch) {
         self.interactor.didChangeGeolocationState(sender.isOn)
     }
 }
@@ -56,28 +55,13 @@ extension SettingsViewController: SettingsDisplayLogic {
     }
 
     func updateGeolocationSwitch(isOn: Bool) {
-        self.switch1.isOn = isOn
+        self.locationSwitch.isOn = isOn
     }
 }
 
-// MARK: - UITableViewDelegate
-extension SettingsViewController {
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
-
-    override func tableView(
-        _ tableView: UITableView,
-        willDisplayHeaderView view: UIView,
-        forSection section: Int
-    ) {
-        guard let headerView = view as? UITableViewHeaderFooterView else { return }
-        headerView.textLabel?.font = .systemFont(ofSize: 18, weight: .heavy)
-        headerView.textLabel?.text = headerView.textLabel?.text?.lowercased().capitalized
-        headerView.textLabel?.textColor = .black
-    }
-
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+// MARK: - UIScrollViewDelegate
+extension SettingsViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         SPStorkController.scrollViewDidScroll(scrollView)
     }
 }
