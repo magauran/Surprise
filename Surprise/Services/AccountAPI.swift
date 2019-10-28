@@ -10,6 +10,7 @@ import Moya
 
 enum AccountAPI {
     case profile
+    case changeName(name: String)
 }
 
 extension AccountAPI: AuthorizedTargetType {
@@ -18,12 +19,14 @@ extension AccountAPI: AuthorizedTargetType {
     var path: String {
         switch self {
         case .profile: return "profile/"
+        case .changeName: return "profile/name/"
         }
     }
 
     var method: Method {
         switch self {
         case .profile: return .get
+        case .changeName: return .post
         }
     }
 
@@ -34,18 +37,36 @@ extension AccountAPI: AuthorizedTargetType {
     var task: Task {
         switch self {
         case .profile: return .requestPlain
+        case .changeName(let name):
+            let changeNameBody = ChangeNameRequestBody(firstName: name)
+            return .requestJSONEncodable(changeNameBody)
         }
     }
 
     var headers: [String: String]? {
         switch self {
         case .profile: return [:]
+        case .changeName: return [:]
         }
     }
 
     var needsAuth: Bool {
         switch self {
         case .profile: return true
+        case .changeName: return true
         }
+    }
+}
+
+struct ChangeNameRequestBody: Encodable {
+    let firstName: String
+
+    enum CodingKeys: String, CodingKey {
+        case firstName = "first_name"
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.firstName, forKey: .firstName)
     }
 }
