@@ -11,7 +11,7 @@
         <!--Account View Controller-->
         <scene sceneID="KdO-zu-wdD">
             <objects>
-                <viewController storyboardIdentifier="AccountViewController" id="2pM-1x-Uah" customClass="AccountViewController" customModule="Surprise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountViewController" id="2pM-1x-Uah" customClass="AccountViewController" customModule="Surprise_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fcY-Dq-BCo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="20" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AccountMenuItemCell" textLabel="FmK-Yq-12i" style="IBUITableViewCellStyleDefault" id="KlG-eq-gzC" customClass="AccountMenuItemCell" customModule="Surprise" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AccountMenuItemCell" textLabel="FmK-Yq-12i" style="IBUITableViewCellStyleDefault" id="KlG-eq-gzC" customClass="AccountMenuItemCell" customModule="Surprise_Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KlG-eq-gzC" id="R09-no-ZXP">
@@ -62,7 +62,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uV2-Z4-zb8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="JSW-U7-jCg" customClass="AccountHeaderView" customModule="Surprise" customModuleProvider="target">
+                <view contentMode="scaleToFill" id="JSW-U7-jCg" customClass="AccountHeaderView" customModule="Surprise_Me" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="274"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -115,7 +115,7 @@
                         <outlet property="nameLabel" destination="8oe-gl-gXB" id="ZvD-Ph-Po3"/>
                     </connections>
                 </view>
-                <view contentMode="scaleToFill" id="SQY-ce-dBi" customClass="AccountBottomView" customModule="Surprise" customModuleProvider="target">
+                <view contentMode="scaleToFill" id="SQY-ce-dBi" customClass="AccountBottomView" customModule="Surprise_Me" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="340"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -164,6 +164,7 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="9pE-Mq-qcI"/>
                     <connections>
+                        <outlet property="bundleVersionLabel" destination="7bl-bb-rdV" id="d4W-oN-OeH"/>
                         <outlet property="logoutButton" destination="bhT-Mo-92C" id="DPP-4n-y8E"/>
                     </connections>
                 </view>

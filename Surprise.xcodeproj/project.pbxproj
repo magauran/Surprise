@@ -55,6 +55,7 @@
 		88D07C5E2366530F0096D2BE /* GeolocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C5D2366530F0096D2BE /* GeolocationService.swift */; };
 		88D07C6023665C780096D2BE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C5F23665C780096D2BE /* SettingsRouter.swift */; };
 		88D07C6223668D4B0096D2BE /* SettingsViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C6123668D4B0096D2BE /* SettingsViewModels.swift */; };
+		88D07C64236785CE0096D2BE /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D07C63236785CE0096D2BE /* Bundle++.swift */; };
 		CB8BCE807F0CA91A04B3AFD1 /* Pods_SurpriseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07004C838422C47B12E17340 /* Pods_SurpriseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,7 @@
 		88D07C5D2366530F0096D2BE /* GeolocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeolocationService.swift; sourceTree = "<group>"; };
 		88D07C5F23665C780096D2BE /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		88D07C6123668D4B0096D2BE /* SettingsViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModels.swift; sourceTree = "<group>"; };
+		88D07C63236785CE0096D2BE /* Bundle++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle++.swift"; sourceTree = "<group>"; };
 		D020D10873280F0D6F8DA671 /* Pods-SurpriseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurpriseTests.release.xcconfig"; path = "Target Support Files/Pods-SurpriseTests/Pods-SurpriseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +182,7 @@
 		8811A7052364F48D0069E9A9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				88D07C63236785CE0096D2BE /* Bundle++.swift */,
 				8811A72223651A3F0069E9A9 /* NSObject++.swift */,
 				8811A7032364E5990069E9A9 /* UITableView++.swift */,
 				8811A7062364F4A00069E9A9 /* UIImage++.swift */,
@@ -638,6 +641,7 @@
 				88D07C57236642A90096D2BE /* SettingsInteractor.swift in Sources */,
 				88A60AF6236478530013A254 /* AccountInteractor.swift in Sources */,
 				8811A7002364AFFB0069E9A9 /* AccountViewModels.swift in Sources */,
+				88D07C64236785CE0096D2BE /* Bundle++.swift in Sources */,
 				8811A6FE23649EC60069E9A9 /* UIStoryboard++.swift in Sources */,
 				886A0330236533330066DC84 /* AccountAPI.swift in Sources */,
 				88A60AFA236478880013A254 /* AccountPresenter.swift in Sources */,

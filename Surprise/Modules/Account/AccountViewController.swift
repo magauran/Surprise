@@ -11,6 +11,7 @@ import UIKit
 protocol AccountDispayLogic: UIViewController {
     func displayMenu(viewModel: MenuViewModel)
     func displayHeader(viewModel: AccountHeaderViewModel)
+    func displayFooter(viewModel: AccountFooterViewModel)
     func showAboutScreen()
     func showSettingsScreen()
     func open(url: URL?)
@@ -33,6 +34,7 @@ final class AccountViewController: UIViewController {
         self.setupChatButton()
         self.interactor.fetchMenuItems()
         self.interactor.fetchUserInfo()
+        self.interactor.fetchAppInfo()
     }
 
     private func setupTableView() {
@@ -80,6 +82,10 @@ extension AccountViewController: AccountDispayLogic {
 
     func displayHeader(viewModel: AccountHeaderViewModel) {
         self.headerView.configure(with: viewModel)
+    }
+
+    func displayFooter(viewModel: AccountFooterViewModel) {
+        self.footerView.configure(with: viewModel)
     }
 
     func showAboutScreen() {

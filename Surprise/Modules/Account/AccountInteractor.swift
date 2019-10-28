@@ -12,6 +12,7 @@ protocol AccountBusinessLogic {
     func fetchMenuItems()
     func openMenuItem(_ menuItem: MenuItem)
     func fetchUserInfo()
+    func fetchAppInfo()
 }
 
 enum MenuItem {
@@ -64,5 +65,10 @@ extension AccountInteractor: AccountBusinessLogic {
             case .failure: ()
             }
         }
+    }
+
+    func fetchAppInfo() {
+        let bundleVersion = Bundle.main.versionString
+        self.presenter.presentAppInfo(bundleVersion: bundleVersion)
     }
 }

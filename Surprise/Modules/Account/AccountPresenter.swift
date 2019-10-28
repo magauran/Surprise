@@ -12,6 +12,7 @@ import class UIKit.UIImage
 protocol AccountPresentationLogic {
     func presentMenu(_ menuItems: [[MenuItem]])
     func presentUserInfo(_ profile: Profile)
+    func presentAppInfo(bundleVersion: String)
     func showAboutScreen()
     func showSettingsScreen()
     func open(url: URL?)
@@ -45,6 +46,12 @@ extension AccountPresenter: AccountPresentationLogic {
 
     func open(url: URL?) {
         self.viewController?.open(url: url)
+    }
+
+    func presentAppInfo(bundleVersion: String) {
+        let bundleVersionString = "v " + bundleVersion
+        let footerViewModel = AccountFooterViewModel(bundleVersion: bundleVersionString)
+        self.viewController?.displayFooter(viewModel: footerViewModel)
     }
 }
 

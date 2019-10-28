@@ -26,3 +26,7 @@ struct AccountHeaderViewModel {
     let email: String
     let avatarURL: URL
 }
+
+struct AccountFooterViewModel {
+    let bundleVersion: String
+}

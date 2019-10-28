@@ -9,7 +9,13 @@
 import UIKit
 
 final class AccountBottomView: UIView {
-    @IBOutlet @Rounded(20) var logoutButton: UIButton! {
+    @IBOutlet private var bundleVersionLabel: UILabel!
+
+    func configure(with viewModel: AccountFooterViewModel) {
+        self.bundleVersionLabel.text = viewModel.bundleVersion
+    }
+
+    @IBOutlet @Rounded(20) private var logoutButton: UIButton! {
         didSet {
             self.logoutButton.layer.masksToBounds = true
             UIColor(named: "logoutButton").map {
@@ -19,6 +25,7 @@ final class AccountBottomView: UIView {
         }
     }
 
-    @IBAction func didTapLogoutButton() {
+    @IBAction private func didTapLogoutButton() {
+        print("Logout")
     }
 }
