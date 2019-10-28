@@ -10,7 +10,7 @@ import Moya
 
 protocol AccountService {
     func fetchAccount(then handler: @escaping (Result<Profile, MoyaError>) -> Void)
-    func changeName(_ name: String, then handler: @escaping (Result<Void, MoyaError>) -> Void)
+    func changeName(_ name: String, then handler: @escaping (Result<Profile, MoyaError>) -> Void)
 }
 
 struct AccountServiceImpl {
@@ -46,13 +46,14 @@ extension AccountServiceImpl: AccountService {
         }
     }
 
-    func changeName(_ name: String, then handler: @escaping (Result<Void, MoyaError>) -> Void) {
+    func changeName(_ name: String, then handler: @escaping (Result<Profile, MoyaError>) -> Void) {
         self.provider.request(.changeName(name: name)) { result in
             switch result {
             case .success(let response):
                 do {
-                    _ = try response.filterSuccessfulStatusCodes()
-                    handler(.success(()))
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let profile = try filteredResponse.map(Profile.self)
+                    handler(.success(profile))
                 } catch let moyaError as MoyaError {
                     handler(.failure(moyaError))
                 } catch {

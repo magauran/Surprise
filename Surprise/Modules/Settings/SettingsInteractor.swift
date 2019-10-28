@@ -79,11 +79,20 @@ extension SettingsInteractor: SettingsBusinessLogic {
     }
 
     func requestChangeName(currentName: String) {
-        self.presenter.presentChangeNameAlert(currentName: "")
+        self.presenter.presentChangeNameAlert(currentName: currentName)
     }
 
     func changeAccountName(newName: String) {
-
+        self.accountService.changeName(newName) { [weak self] result in
+            switch result {
+            case .success(let profile):
+                DispatchQueue.main.async {
+                    self?.presenter.updateAccountInfo(profile)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
