@@ -34,7 +34,7 @@ extension GeolocationServiceImpl: GeolocationService {
 
     func requestPermission(then handler: @escaping (Bool) -> Void) {
         let status = CLLocationManager.authorizationStatus()
-        guard status == .restricted else {
+        guard status == .restricted || status == .notDetermined else {
             let isAuthorized = (status == .authorizedAlways) || (status == .authorizedWhenInUse)
             handler(isAuthorized)
             return
