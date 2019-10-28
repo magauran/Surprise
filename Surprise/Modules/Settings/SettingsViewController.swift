@@ -13,7 +13,7 @@ protocol SettingsDisplayLogic: AnyObject {
     func updateLanguageButton(language: TourLanguage)
     func updateGeolocationSwitch(isOn: Bool)
     func updateAccount(viewModel: SettingsAccountSectionViewModel)
-    func displayChangeNameAlert()
+    func displayChangeNameAlert(currentName: String)
     func showAlertAndOpenSettings()
 }
 
@@ -84,8 +84,8 @@ extension SettingsViewController: SettingsDisplayLogic {
         self.emailLabel.text = viewModel.email
     }
 
-    func displayChangeNameAlert() {
-        self.router.showChangeNameAlert { newName in
+    func displayChangeNameAlert(currentName: String) {
+        self.router.showChangeNameAlert(currentName: currentName) { newName in
             if let newName = newName {
                 self.interactor.changeAccountName(newName: newName)
             }

@@ -44,7 +44,7 @@ extension SettingsPresenter: SettingsPresentationLogic {
     }
 
     func presentChangeNameAlert(currentName: String) {
-        self.view?.displayChangeNameAlert()
+        self.view?.displayChangeNameAlert(currentName: currentName)
     }
 }
 
