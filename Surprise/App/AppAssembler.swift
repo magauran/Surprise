@@ -22,9 +22,11 @@ private struct AppAssembly: Assembly {
     func assemble(container: Container) {
         container.register(UIViewController.self) {
             let viewController0 = UIViewController()
+            viewController0.view.backgroundColor = .white
             viewController0.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "albums"), tag: 0)
 
             let viewController1 = UIViewController()
+            viewController1.view.backgroundColor = .white
             viewController1.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "search"), tag: 1)
 
             let accountAssembler = $0 ~> AccountAssembler.self

@@ -21,7 +21,7 @@ final class AccountViewController: UIViewController {
     var interactor: AccountBusinessLogic!
     var router: AccountRoutingLogic!
 
-    @IBOutlet private var headerView: AccountHeaderView! // TODO: clean storyboard defaults
+    @IBOutlet private var headerView: AccountHeaderView!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var footerView: AccountBottomView!
     private let chatButton = UIButton()
@@ -43,6 +43,7 @@ final class AccountViewController: UIViewController {
     }
 
     private func setupChatButton() {
+        // TODO: Custom view or extract to Style
         self.chatButton.setImage(UIImage(named: "chat"), for: .normal)
         self.chatButton.tintColor = UIColor(named: "chatButton")
         self.chatButton.addTarget(self, action: #selector(self.didTapChatButton), for: .touchUpInside)
