@@ -23,16 +23,18 @@ final class SettingsInteractor {
     private let presenter: SettingsPresentationLogic
     private let languageSource: LanguageSource
     private let geolocationSource: GeolocationSource
-    private let geolocationService: GeolocationService = GeolocationServiceImpl()
+    private let geolocationService: GeolocationService
 
     init(
         presenter: SettingsPresentationLogic,
         languageSource: LanguageSource,
-        geolocationSource: GeolocationSource
+        geolocationSource: GeolocationSource,
+        geolocationService: GeolocationService
     ) {
         self.presenter = presenter
         self.languageSource = languageSource
         self.geolocationSource = geolocationSource
+        self.geolocationService = geolocationService
     }
 }
 
@@ -42,6 +44,9 @@ extension SettingsInteractor: SettingsBusinessLogic {
         let language = self.languageSource.currentLanguage
         guard let tourLanguage = TourLanguage(rawValue: language) else { return assertionFailure() }
         self.presenter.presentSettings(language: tourLanguage)
+
+        let geolocationEnabled = self.geolocationSource.isGeolocationEnabled
+        self.presenter.updateGeolocationStatus(isEnabled: geolocationEnabled)
     }
 
     func didSelectLanguage(_ language: TourLanguage) {
@@ -57,16 +62,17 @@ extension SettingsInteractor: SettingsBusinessLogic {
         }
 
         if isEnabled {
-            let geolocationEnabled = self.geolocationService.requestPermission()
-            if geolocationEnabled {
-                self.geolocationSource.isGeolocationEnabled = true
-                self.presenter.updateGeolocationStatus(isEnabled: true)
-            } else {
-                self.presenter.updateGeolocationStatus(isEnabled: false)
+            self.geolocationService.requestPermission { [weak self] geolocationEnabled in
+                guard let self = self else { return }
+                self.updateGeolocationStatus(isEnabled: geolocationEnabled)
             }
         } else {
-            self.geolocationSource.isGeolocationEnabled = false
-            self.presenter.updateGeolocationStatus(isEnabled: false)
+            self.updateGeolocationStatus(isEnabled: false)
         }
+    }
+
+    private func updateGeolocationStatus(isEnabled: Bool) {
+        self.geolocationSource.isGeolocationEnabled = isEnabled
+        self.presenter.updateGeolocationStatus(isEnabled: isEnabled)
     }
 }

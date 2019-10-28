@@ -51,7 +51,18 @@ private struct AppAssembly: Assembly {
             return AccountAssembler(parent: appAssembler.assembler)
         }
 
-        container.autoregister(TokenSource.self, initializer: AppConfig.init)
-        container.autoregister(LanguageSource.self, initializer: AppConfig.init)
+        container.autoregister(AppConfig.self, initializer: AppConfig.init)
+
+        container.register(TokenSource.self) {
+            return $0 ~> AppConfig.self
+        }
+
+        container.register(LanguageSource.self) {
+            return $0 ~> AppConfig.self
+        }
+
+        container.register(GeolocationSource.self) {
+            return $0 ~> AppConfig.self
+        }
     }
 }

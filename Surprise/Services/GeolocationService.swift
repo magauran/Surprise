@@ -10,11 +10,20 @@ import CoreLocation
 
 protocol GeolocationService {
     var isDenied: Bool { get }
-    func requestPermission() -> Bool
+    func requestPermission(then handler: @escaping (Bool) -> Void)
 }
 
-final class GeolocationServiceImpl {
+final class GeolocationServiceImpl: NSObject {
     private let locationManager = CLLocationManager()
+    private var authCallback: ((CLAuthorizationStatus) -> Void)?
+
+    override init() {
+        super.init()
+
+        defer {
+            self.locationManager.delegate = self
+        }
+    }
 }
 
 extension GeolocationServiceImpl: GeolocationService {
@@ -23,15 +32,31 @@ extension GeolocationServiceImpl: GeolocationService {
         return authorizationStatus == .denied
     }
 
-    func requestPermission() -> Bool {
-        self.locationManager.requestWhenInUseAuthorization()
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedAlways, .authorizedWhenInUse:
-            return true
-        case .notDetermined, .restricted, .denied:
-            return false
-        @unknown default:
-            return false
+    func requestPermission(then handler: @escaping (Bool) -> Void) {
+        let status = CLLocationManager.authorizationStatus()
+        guard status == .restricted else {
+            let isAuthorized = (status == .authorizedAlways) || (status == .authorizedWhenInUse)
+            handler(isAuthorized)
+            return
         }
+
+        self.locationManager.requestWhenInUseAuthorization()
+
+        self.authCallback = { status in
+            switch status {
+            case .authorizedAlways, .authorizedWhenInUse:
+                handler(true)
+            case .notDetermined, .restricted, .denied:
+                handler(false)
+            @unknown default:
+                handler(false)
+            }
+        }
+    }
+}
+
+extension GeolocationServiceImpl: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        self.authCallback?(status)
     }
 }
