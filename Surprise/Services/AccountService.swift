@@ -14,13 +14,8 @@ protocol AccountService {
 }
 
 struct AccountServiceImpl {
-    init(tokenSource: TokenSource) {
-        self.provider = MoyaProvider<AccountAPI>(
-            callbackQueue: DispatchQueue.global(qos: .utility),
-            plugins: [
-                AuthPlugin(tokenClosure: { tokenSource.token })
-            ]
-        )
+    init(provider: MoyaProvider<AccountAPI>) {
+        self.provider = provider
     }
 
     private let provider: MoyaProvider<AccountAPI>

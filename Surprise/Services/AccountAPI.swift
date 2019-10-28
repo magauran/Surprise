@@ -31,7 +31,14 @@ extension AccountAPI: AuthorizedTargetType {
     }
 
     var sampleData: Data {
-        return Data() // TODO: stubbed response
+        switch self {
+        case .profile:
+            let json = Self.mockProfileJSON
+            return Data(json.utf8)
+        case .changeName:
+            let json = Self.mockProfileJSON
+            return Data(json.utf8)
+        }
     }
 
     var task: Task {
@@ -69,4 +76,36 @@ struct ChangeNameRequestBody: Encodable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.firstName, forKey: .firstName)
     }
+}
+
+extension AccountAPI {
+    private static let mockProfileJSON =
+    """
+    {
+      "data": {
+        "id": 26132,
+        "email": "alexey@salangin.com",
+        "phone": null,
+        "first_name": "Alexey",
+        "last_name": "Salangin",
+        "nickname": "id26132",
+        "avatar": "https://app.surprizeme.ru/media/users/26132/1znu4cjtcau.jpg",
+        "is_superuser": false,
+        "is_password_set": false,
+        "is_social_set": false,
+        "is_partner": false,
+        "is_sales": true,
+        "permissions": [],
+        "client": {
+          "name": "Free personal plan (test@user.com)",
+          "max_downloads": 30,
+          "downloads": 0
+        },
+        "locale": "en",
+        "created_at": 1570804084,
+        "favorite_products": [],
+        "is_hijacked": false
+      }
+    }
+    """
 }

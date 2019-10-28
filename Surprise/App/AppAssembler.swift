@@ -8,6 +8,7 @@
 
 import Swinject
 import SwinjectAutoregistration
+import Moya
 
 struct AppAssembler {
     var resolver: Resolver { self.assembler.resolver }
@@ -69,7 +70,13 @@ private struct AppAssembly: Assembly {
 
         container.register(AccountService.self) {
             let tokenSource = $0 ~> TokenSource.self
-            let service = AccountServiceImpl(tokenSource: tokenSource)
+            let provider = MoyaProvider<AccountAPI>(
+                callbackQueue: DispatchQueue.global(qos: .utility),
+                plugins: [
+                    AuthPlugin(tokenClosure: { tokenSource.token })
+                ]
+            )
+            let service = AccountServiceImpl(provider: provider)
             return service
         }
     }

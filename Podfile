@@ -16,9 +16,4 @@ target 'Surprise' do
     inherit! :search_paths
     # Pods for testing
   end
-
-  target 'SurpriseUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 end

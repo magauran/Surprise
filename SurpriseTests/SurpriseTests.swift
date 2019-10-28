@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Surprise
+@testable import Surprise_Me
 
 class SurpriseTests: XCTestCase {
 
