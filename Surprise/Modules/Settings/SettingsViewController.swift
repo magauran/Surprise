@@ -31,6 +31,7 @@ final class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.clearStoryboardDefaults()
         self.interactor.fetchSettingsState()
     }
 
@@ -53,6 +54,11 @@ final class SettingsViewController: UIViewController {
 
     @IBAction private func didTapChangeNameButton() {
         self.interactor.requestChangeName(currentName: self.nameLabel.text ?? "")
+    }
+
+    private func clearStoryboardDefaults() {
+        self.nameLabel.text = nil
+        self.emailLabel.text = nil
     }
 }
 

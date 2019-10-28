@@ -16,6 +16,11 @@ final class AccountHeaderView: UIView {
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var emailLabel: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.clearStoryboardDefaults()
+    }
+
     func configure(with viewModel: ViewModel) {
         self.nameLabel.text = viewModel.name
         self.emailLabel.text = viewModel.email
@@ -30,6 +35,11 @@ final class AccountHeaderView: UIView {
                 .backgroundDecode,
             ]
         )
+    }
+
+    private func clearStoryboardDefaults() {
+        self.nameLabel.text = nil
+        self.emailLabel.text = nil
     }
 }
 
